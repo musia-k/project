@@ -1,6 +1,6 @@
 <?php
 include 'db.php'; 
-$sql = "select * from studentsinfo";
+$sql = "select * from studentsinfo where fname!='' and lname !='' and city!=''";
 $result = $conn->query($sql);
 if($result ->num_rows > 0) {
 //fetch_assoc(): It fetches result as an associative array.
