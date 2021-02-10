@@ -35,7 +35,12 @@ Group ID:<br>
 if($_POST['submit']){
     
     $fname = $_POST['fname'];
-    $query = mysqli_query($conn,"UPDATE studentsinfo set fname='$fname' where id='$a'");
+    $lname= $_POST['lname'];
+    $city= $_POST['city'];
+    $groupid= $_POST['groupid'];
+
+    $sqli = "UPDATE studentsinfo set fname='$fname', lname='$lname', city='$city', groupid='$groupid' where id='$a'";
+    $query = mysqli_query($conn, $sqli);
     if($query){
         echo "Record Modified Successfully <br>";
         echo "<a href='update.php'> Check your updated List </a>";

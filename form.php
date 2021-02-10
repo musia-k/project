@@ -12,3 +12,13 @@
 <input type="submit" value="Save Data">
 </form>
 
+<?php
+
+if (!empty($_GET['error'])){
+    $error = htmlspecialchars($_GET['error']); 
+}
+ 
+echo $error;
+
+include "create.php";
+?>
