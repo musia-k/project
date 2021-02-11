@@ -17,9 +17,7 @@
      height: fit-content;
      margin-bottom: 5%;
  }
- 
- .column {
- }
+
  
  .h1 {
      position: absolute;
@@ -32,9 +30,6 @@
      font-weight: bold;
      font-size: 64px;
      line-height: 75px;
- }
- 
- .column2 {
  }
  
  .image2 {
@@ -50,8 +45,6 @@
      line-height: 75px;
      color: #000000;
  }
- .container-text {
- }
  @media screen and (max-width: 860px) {
     .container-main {
         background-repeat: no-repeat;
@@ -61,3 +54,4 @@
         background-size: cover;
         background-image: url();
     }
+}
