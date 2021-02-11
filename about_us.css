@@ -1,0 +1,63 @@
+ body {
+     max-height: 1000px;
+     height: 80%;
+ }
+ /* background img */
+ 
+ .container-main {
+     background-repeat: no-repeat;
+     background-size: 100vm;
+     background-position-x: 0px;
+     background-position-y: -15px;
+     background-size: cover;
+     background-image: url(https://i.ibb.co/kG2RcPR/figure.jpg);
+ }
+
+ .container-content {
+     height: fit-content;
+     margin-bottom: 5%;
+ }
+ 
+ .column {
+ }
+ 
+ .h1 {
+     position: absolute;
+     width: 569px;
+     height: 288px;
+     left: 132px;
+     top: 223px;
+     font-family: Roboto;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 64px;
+     line-height: 75px;
+ }
+ 
+ .column2 {
+ }
+ 
+ .image2 {
+     float: right;
+ }
+ 
+ .img_word {
+     position: absolute;
+     top: 223px;
+     font-style: normal;
+     font-weight: bold;
+     font-size: 64px;
+     line-height: 75px;
+     color: #000000;
+ }
+ .container-text {
+ }
+ @media screen and (max-width: 860px) {
+    .container-main {
+        background-repeat: no-repeat;
+        background-size: 100vm;
+        background-position-x: 0px;
+        background-position-y: -15px;
+        background-size: cover;
+        background-image: url();
+    }

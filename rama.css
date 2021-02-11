@@ -1,0 +1,553 @@
+/* General */
+.container-content {
+    max-width: 1140px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.left-column {
+
+}
+.right-column {
+
+}
+.div-title {
+    background-color: rgba(196, 196, 196, 0.3);
+    border-left: 0.5rem solid #5A5B95;
+}
+.div-title h1 {
+    margin-left: 1.4rem;
+    font-size: 18px;
+    font-weight: bold;
+}
+.div-article {
+    background-color: rgba(196, 196, 196, 0.3);
+    border: 0.2rem solid #5A5B95;
+}
+.div-article h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-left: 0.7rem;
+}
+.div-article p {
+    font-size: 12px;
+    margin: 0 2rem 0.3rem 2rem;
+}
+.div-article a {
+    font-size: 12px;
+    color: #5A5B95;
+    text-decoration: none;
+}
+/* End General */
+
+/* FAQ Page */
+.container-main.page-faq {
+    background-image: url(src/images/figure-rotated.jpg), url(src/images/figure.jpg);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100vw, 100vw;
+    background-size: cover, cover;
+    background-position-x: 430px, -130px;
+    background-position-y: -100px, 170px;
+} 
+.page-faq .container-content {
+    margin-bottom: 130px;
+}
+img#faq-img {
+    width: 100%;
+    margin-bottom: 3rem;
+}
+.page-faq .left-column .div-title {
+    margin-top: 2.8rem;
+}
+.page-faq .left-column .div-article {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.page-faq .right-column .div-title {
+    margin-bottom: 1rem;
+    /* margin-top: 2rem; */
+}
+.page-faq .right-column .div-article {
+    margin-bottom: 1rem;
+}
+/* End of FAQ */
+
+/* Gallery */
+.page-gallery.container-main{
+    background-image: url(src/images/figure-rotated.jpg);
+    background-position-x: 500px;
+    background-position-y: 0px;
+    background-repeat: no-repeat;
+}
+.page-gallery .container-content {
+    margin-bottom: 25px;
+}
+.page-gallery .div-title {
+    background-color: white;
+    border: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.page-gallery .div-title h1 {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+}
+.page-gallery span.city {
+    color: #5A5B95;
+    font-size: 45px;
+    text-decoration: underline #fd979a dashed;
+}
+.div-card {
+    width: 261px;
+    height: 275px;
+    background-color: white;
+    border: 0 1px 1px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 45px;
+}
+.div-card-header h2 {
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+.div-card-header p {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.div-card-type {
+}
+.div-card-type p {
+    margin: 0 auto;
+    width: 60px;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 3px;
+    color: white;
+    background-color: #fd979a;
+    position: relative;
+}
+.div-card-header {
+    text-align: center;
+}
+.div-card-img {
+    text-align: center;
+    max-height: 150px;
+}
+.div-card-img img {
+    max-height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.div-card-price {
+    width: 50%;
+    padding: 0;
+    margin-left: 25px;
+    display: inline;
+}
+.div-card-price p {
+    display: inline;
+    width: 30px;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+.div-card-price h2 {
+    display: inline;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+}
+.div-card-extra {
+    margin: 0 auto;
+    text-align: center;
+}
+.div-card-extra img {
+    margin-top: -15px;
+    max-width: 154px;
+}
+.div-card-button {
+    display: inline;
+    padding: 0;
+}
+.card-button {
+    display: inline-block;
+    position: relative;
+    background-color: #5A5B95;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 2px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 900;
+    top: -2px;
+    right: -55px;
+    margin: 0;
+    cursor: pointer;
+}
+.card-button:hover {
+    color: white;
+    text-decoration: none;
+}
+.div-calendar {
+    position: relative;
+    top: 20px;
+    background-color: white;
+    min-width: 340px;
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    border: 0 1px 1px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px #5A5B95;
+}
+div.calendar-title {
+    width: 80px;
+    height: 30px;
+    border-bottom: 3px solid #5A5B95;
+}
+div.calendar-title h3 {
+    overflow: visible;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: -100px;
+    margin-right: -100px;
+}
+div.box1 {
+    border-right: 2px solid #5A5B95;
+    border-bottom: 2px solid #5A5B95;
+    margin-bottom: -15px;
+    overflow: visible;
+    white-space: nowrap;
+}
+div.box2 {
+    margin-bottom: -15px;
+    border-bottom: 2px solid #5A5B95;
+    border-left: 2px solid #5A5B95;
+}
+div.box3 {
+    padding-top: 30px;
+    margin: 15px 0 0 0;
+    border-top: 2px solid #5A5B95;
+    border-right: 2px solid #5A5B95;
+    overflow: visible;
+    white-space: nowrap;
+}
+div.box4 {
+    padding-top: 27px;
+    margin: 15px 0 0 0;
+    border-left: 2px solid #5A5B95;
+    border-top: 2px solid #5A5B95;
+}
+.calendar-start {
+    margin-left: 20px;
+}
+.calendar-content {
+    font-weight: bold;
+}
+.calendar-content h4 {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.calendar-date {
+    display: inline;
+    text-transform: uppercase;
+    font-size: 18px;
+    position: relative;
+    top: 2px;
+    left: 7px;
+}
+.calendar-day {
+    display: inline;
+    text-transform: uppercase;
+    font-size: 11px;
+    position: relative;
+    top: -7px;
+    left: 8px;
+}
+.calendar-month {
+    display: inline;
+    text-transform: uppercase;
+    font-size: 11px;
+    position: relative;
+    top: 6px;
+    left: -11px;
+}
+.clock {
+    position: relative;
+    left: -4px;
+    top: -2px;
+}
+.calendar-time {
+    display: inline;
+    margin-right: -80px;
+    position: relative;
+    overflow: visible;
+    white-space: nowrap;
+    font-size: 16px;
+    top: 1px;
+}
+.calendar-end {
+    margin-top: 53px;
+    margin-left: 20px;
+}
+.bg-image {
+    display: block;
+    width: 230px;
+    position: relative;
+    top: -240px;
+    left: 345px;
+}
+.bg-text {
+    display: block;
+    position: relative;
+    top: -240px;
+    left: 410px;
+}
+.bg-text h5 {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: bold;
+}
+.bg-text #text-2 {
+    position: relative;
+    top: -10px;
+    left: 82px;
+}
+/* mobile */
+.page-gallery .container-content.d-block {
+    width: 80%;
+}
+.div-calendar.d-block {
+    position: static;
+    margin-bottom: 40px;
+    height: 130px;
+    min-width: 265px;
+    z-index: 10;
+}
+.div-calendar.d-block .calendar-end {
+    margin-top: 30px;
+}
+.div-calendar.d-block div.box1 {
+    border-right: 2px solid #5A5B95;
+    border-bottom: 2px solid #5A5B95;
+    margin-bottom: -15px;
+    margin-left: -18px;
+}
+.div-calendar.d-block div.box2 {
+    margin-bottom: -15px;
+    border-bottom: 2px solid #5A5B95;
+    border-left: 2px solid #5A5B95;
+}
+.div-calendar.d-block div.box3 {
+    height: 42px;
+    padding-top: 10px;
+    margin: 15px 0 0 -18px;
+    border-top: 2px solid #5A5B95;
+    border-right: 2px solid #5A5B95;
+}
+.div-calendar.d-block div.box4 {
+    height: 42px;
+    padding-top: 10px;
+    margin: 15px 0 0 0;
+    border-left: 2px solid #5A5B95;
+    border-top: 2px solid #5A5B95;
+}
+.div-calendar.d-block .calendar-content {
+    position: relative;
+    top: -15px;
+    left: -9px;
+}
+/* logo calendar */
+.div-calendar.d-block div.box1 img, .div-calendar.d-block div.box3 img {
+    position: relative;
+    left: -10px;
+}
+/* date */
+.div-calendar.d-block .calendar-date {
+    position: relative;
+    top: 2px;
+    left: -7px;
+}
+/* day */
+.div-calendar.d-block .calendar-day {
+    position: relative;
+    top: -7px;
+    left: -8px;
+}
+/* month */
+.div-calendar.d-block .calendar-month {
+    position: relative;
+    top: 6px;
+    left: -26px;
+}
+/* time */
+.div-calendar.d-block .calendar-time {
+    margin-right: -80px;
+    font-size: 16px;
+    top: 1px;
+    left: -5px;
+}
+/* end mobile */
+/* End of Gallery */
+
+@media screen and (max-width: 1380px) {
+    .bg-text  {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .div-calendar {
+        height: 180px;
+    }
+    .bg-image {
+        display: block;
+        width: 180px;
+        position: relative;
+        top: -220px;
+        left: 345px;
+    }
+    .bg-text  {
+        display: block;
+        position: relative;
+        top: -210px;
+        left: 400px;
+    }
+    .bg-text h5 {
+        color: rgb(255, 255, 255);
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .bg-text #text-2 {
+        position: relative;
+        top: -10px;
+        left: 50px;
+    }
+    .page-gallery.container-main{
+        background-image: url(src/images/figure-rotated.jpg);
+        background-position-x: 400px;
+        background-position-y: 00px;
+        background-repeat: no-repeat;
+    }
+    .page-gallery .div-title h1 {
+        font-size: 38px;
+    }
+    .page-gallery .div-title span.city {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .page-gallery.container-main{
+        background-image: url(src/images/figure-rotated.jpg);
+        background-position-x: 100px;
+        background-position-y: 00px;
+        background-repeat: no-repeat;
+    }
+    .page-gallery .bg-image {
+        top: 60px;
+        left: 20px;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* FAQ */
+    .container-main.page-faq{
+        background-image: url(src/images/figure-rotated.jpg), url(src/images/figure.jpg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100vw, 100vw;
+        background-size: cover, cover;
+        background-position-x: -120px, -130px;
+        background-position-y: -100px, 100px;
+    }
+    .page-faq .left-column .div-title {
+        margin-top: 1rem;
+    }
+    img#faq-img {
+        margin-bottom: 0;
+    }
+    /* End of FAQ */
+    /* gallery */
+    .page-gallery.container-main{
+        background-image: url(src/images/figure-rotated.jpg);
+        background-position-x: 00px;
+        background-position-y: 10px;
+        background-repeat: no-repeat;
+    }
+    .page-gallery .div-title h1 {
+        font-size: 24px;
+    }
+    .page-gallery .div-title span.city {
+        font-size: 22px;
+    }
+    .page-gallery .bg-image {
+        top: 40px;
+        left: 50px;
+        width: 125px;
+    }
+}
+@media screen and (max-width: 570px) {
+    /* FAQ */
+    .container-main.page-faq{
+        background-image: url(src/images/figure-rotated.jpg), url(src/images/figure.jpg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100vw, 100vw;
+        background-size: cover, cover;
+        background-position-x: -250px, -130px;
+        background-position-y: -100px, 100px;
+    }
+    /* End of FAQ */
+    /* gallery */
+    .page-gallery.container-main{
+        background-image: url(src/images/figure-rotated.jpg);
+        background-position-x: -100px;
+        background-position-y: 10px;
+        background-repeat: no-repeat;
+    }
+    .page-gallery .div-title h1 {
+        font-size: 18px;
+        margin-right: -40px;
+    }
+    .page-gallery .div-title span.city {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 500px) {
+    /* FAQ */
+    .container-main.page-faq{
+        background-image: url(src/images/figure-rotated.jpg), url(src/images/figure.jpg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: 100vw, 100vw;
+        background-size: cover, cover;
+        background-position-x: -330px, -130px;
+        background-position-y: -100px, 100px;
+    }
+    /* End of FAQ */
+    /* gallery */
+    .page-gallery .bg-image {
+        width: 115px;
+    }
+}
+@media screen and (max-width: 376px) {
+    /* gallery */
+    .page-gallery .bg-image {
+        width: 100px;
+    }
+}
+@media screen and (max-width: 360px) {
+    /* gallery */
+    .page-gallery .bg-image {
+        display: none;
+    }
+}
