@@ -11,29 +11,29 @@
 
     switch ($page) {
         case 'home':
-            $pagestyle = "home.css";
+            $pagestyle = "styles/home.css";
             $webtitle = "Home";
             break;
 
         case 'gallery':
-            $pagestyle = "rama.css";
+            $pagestyle = "styles/rama.css";
             $webtitle = "Gallery";
             $containerclass = "page-gallery";
             break;
         
         case 'about-us':
-            $pagestyle = "about_us.css";
+            $pagestyle = "styles/about_us.css";
             $webtitle = "About Us";
             break;
         
         case 'faq':
-            $pagestyle = "rama.css";
+            $pagestyle = "styles/rama.css";
             $webtitle = "Frequently Asked Question";
             $containerclass = "page-faq";
             break;
 
         case 'rules':
-            $pagestyle = "rules-styles.css";
+            $pagestyle = "styles/rules-styles.css";
             $webtitle = "Rules";
             break;
 
