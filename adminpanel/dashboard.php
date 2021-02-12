@@ -59,7 +59,7 @@
             <td><?php echo $row["feature"]; ?></td>
             <td><?php echo $row["price"]; ?></td>
             <td><?php echo $row["timestamp"]; ?></td>
-            <td><a href="updatesingle.php?id=<?php echo $row['id']; ?>">Update</a></td>
+            <td><a href="update.php?id=<?php echo $row['id']; ?>">Update</a></td>
             <td><a href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
             <?php if($id == $row['id']){echo "<td>".$error."</td>";} ?>
             </tr>

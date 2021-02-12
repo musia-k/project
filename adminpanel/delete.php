@@ -1,20 +1,17 @@
 <?php 
-require "config.php";
-require 'session.php';
+include "config.php";
+include 'session.php';
 $id = htmlentities($_GET['id']);
 
-$sql = "DELETE FROM cars WHERE id='$a'";
-$query = mysqli_query($conn, $sql);
+$sql = "DELETE FROM cars WHERE id='$id'";
 
-if($query){
-    // echo "Record Deleted with id: $a <br>";
-    // echo "<a href='update.php'> Check your updated List </a>";
-    // if you want to redirect to update page after updating
+if($conn->query($sql)){
     header("location: dashboard.php");
 }
 else {
     $error = "Record Not Deleted";
     header("location: dashboard.php?error=$error&id=$id");
 }
-
+$conn-> close();
+die();
 ?>
