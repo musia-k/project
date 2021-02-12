@@ -1,9 +1,7 @@
 <?php
     require 'session.php';
 
-    $brand=$type=$category=$price=$picture=$feature="";
-    $sql = "";
-    $query;
+    $brand=$type=$category=$price=$picturepath=$featurepath="";
     $target_dir = $_SERVER['DOCUMENT_ROOT'].'/project2/uploads/';
     $uploadOk = 1;
     $error = [];
@@ -20,17 +18,19 @@
     if (isset($_POST['insert'])){
         if (empty($_POST['brand']) || empty($_POST['type']) || empty($_POST['category']) || empty($_POST['price']) || empty($_FILES['feature']['size']) || empty($_FILES['picture']['size'])) {
             array_push($error, "Please fill all the fields");
-            $uploadOk = 0;
+            $uploadOk = 0;            
         }
         else { 
             $brand = $_POST['brand'];
             $type = $_POST['type'];
             $category = $_POST['category'];
             $price = $_POST['price'];
-            $feature = $target_dir . basename($_FILES['feature']['name']);
-            $picture = $target_dir . basename($_FILES['picture']['name']);
+            $featurepath = $target_dir . basename($_FILES['feature']['name']);
+            $picturepath = $target_dir . basename($_FILES['picture']['name']);
+            $picturename = basename($_FILES['picture']['name']);
+            $featurename = basename($_FILES['feature']['name']);
 
-            $sql = "INSERT INTO cars (`brand`, `type`, `category`, `pics`, `feature`, `price`) VALUES ('$brand', '$type', '$category', '$picture', '$feature', '$price')";
+            $sql = "INSERT INTO cars (`brand`, `type`, `category`, `picturename`, `featurename`, `picturepath`, `featurepath`, `price`) VALUES ('$brand', '$type', '$category', '$picturename', '$featurename', '$picturepath', '$featurepath', '$price')";
 
             // picture extension validation
             if (in_array($checkPicture, $allowedImageExtension)){
@@ -42,7 +42,7 @@
             }
 
             // feature extension validation
-            if (in_array($checkFeature, $allowedImageExtension)){
+            if ($uploadOk != 0 && in_array($checkFeature, $allowedImageExtension)){
                 $uploadOk = 1;
             }
             else {
@@ -51,7 +51,7 @@
             }
 
             // picture and feature size limit
-            if ($_FILES['picture']['size']<(2*1024*1024) && $_FILES['feature']['size']<(2*1024*1024)){
+            if ($uploadOk != 0 && $_FILES['picture']['size']<(2*1024*1024) && $_FILES['feature']['size']<(2*1024*1024)){
                 $uploadOk = 1;
             }
             else {
@@ -60,24 +60,16 @@
             }
 
             // if picture exist
-            if (file_exists($picture) || file_exists($feature)){
+            if (file_exists($picturepath) || file_exists($featurepath)){
                 array_push($error, "sorry, file already exist");
                 $uploadOk = 0;
             }
             else {
-                // upload picture
-                if (move_uploaded_file($_FILES['picture']['tmp_name'], $picture)) {
+                // upload pictures
+                if (move_uploaded_file($_FILES['picture']['tmp_name'], $picturepath) && move_uploaded_file($_FILES['feature']['tmp_name'], $featurepath)) {
                     $uploadOk = 1;
                 } else {
-                    array_push($error, "Sorry, there was an error uploading your file.");
-                    $uploadOk = 0;
-                }
-
-                // upload feature
-                if (move_uploaded_file($_FILES['feature']['tmp_name'], $feature)) {
-                    $uploadOk = 1;
-                } else {
-                    array_push($error, "Sorry, there was an error uploading your file.");
+                    array_push($error, "Sorry, there was an error while uploading your file.");
                     $uploadOk = 0;
                 }
             }
@@ -91,12 +83,12 @@
                     $error = ["Your data have been Submitted"];
                 }
                 else {
-                    unlink($picture);
-                    unlink($feature);
+                    unlink($picturepath);
+                    unlink($featurepath);
                     array_push($error, "submission failed");
                     array_push($error, "ERROR: " .$sql. "<br>" . $conn->error);
-                    array_push($error, $picture);
-                    array_push($error, $feature);
+                    array_push($error, $picturepath);
+                    array_push($error, $featurepath);
                 }
                 $conn-> close();
             }
@@ -177,7 +169,8 @@
         </table>
     </form>
 
-    <?php foreach ($error as $p) {
+    <?php
+    foreach ($error as $p) {
         echo $p."<br>";
     }
     ?>
