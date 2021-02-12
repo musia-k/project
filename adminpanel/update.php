@@ -109,84 +109,106 @@ if (isset($_POST['insert'])){
 
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Update Cars</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        main {
+            margin: 15px auto 0 auto;
+        }
+        img {
+            max-height: 150px;
+            max-width: 170px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Update Car</title>
 </head>
 <body>
-<a href="dashboard.php">Dashboard</a>
-    <form action="" method="post" enctype="multipart/form-data">
-        <table>
-            <tr>
-                <td>
-                    <label for="brand">Brand: </label>
-                </td>
-                <td>
-                    <input type="text" name="brand" id="brand" value="<?php echo $row['brand']; ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="type">Type:</label>
-                </td>
-                <td>
-                    <input type="text" name="type" id="type" value="<?php echo $row['type']; ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="price">Price:</label>
-                </td>
-                <td>
-                    <input type="number" name="price" id="price" min=0 value="<?php echo $row['price']; ?>">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="category">Category:</label>
-                </td>
-                <td>
-                    <select name="category">
-                        <option value="SUV">SUV</option>
-                        <option value="ECONOM">ECONOM</option>
-                        <option value="OTHER">OTHER</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="feature">Feature:</label>
-                </td>
-                <td>
-                    <?php echo $row['feature']; ?>
-                </td>
-                <td>
-                    <input type="file" name="feature" id="feature">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="picture">Picture:</label>
-                </td>
-                <td>
-                    <img src="<?php echo $row['pics']; ?>" alt="">
-                </td>
-                <td>
-                    <input type="file" name="picture" id="picture">
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td style="text-align: right;">
-                    <input type="submit" name="insert" value="Insert New Record">
-                </td>
-            </tr>
-        </table>
-    </form>
-
+    <div class="container mx-auto">
+        <?php include 'navbar.php'; ?>
+    
+        <main>
+            <form action="" method="post" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <td>
+                            <label for="brand">Brand: </label>
+                        </td>
+                        <td>
+                            <input type="text" name="brand" id="brand" value="<?php echo $row['brand']; ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="type">Type:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="type" id="type" value="<?php echo $row['type']; ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="price">Price:</label>
+                        </td>
+                        <td>
+                            <input type="number" name="price" id="price" min=0 value="<?php echo $row['price']; ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="category">Category:</label>
+                        </td>
+                        <td>
+                            <select name="category">
+                                <option value="SUV">SUV</option>
+                                <option value="ECONOM">ECONOM</option>
+                                <option value="OTHER">OTHER</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="feature">Feature:</label>
+                        </td>
+                        <td>
+                            <img src="<?php echo '../uploads/'.$row["featurename"]; ?>"/>
+                        </td>
+                        <td>
+                            <a href="#">Update Feature</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="picture">Picture:</label>
+                        </td>
+                        <td>
+                            <img src="<?php echo '../uploads/'.$row["picturename"]; ?>"/>
+                        </td>
+                        <td>
+                            <a href="#">Update Picture</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td style="text-align: right;">
+                            <input type="submit" name="insert" value="Insert New Record">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </main>
+    
+        
     <?php foreach ($error as $p) {
-        echo $p."<br>";
+    echo $p."<br>";
     }
     ?>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
 </body>
 </html>
