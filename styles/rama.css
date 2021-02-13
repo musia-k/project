@@ -168,6 +168,10 @@ img#faq-img {
     display: inline;
     padding: 0;
 }
+.div-card-spacer {
+    width: 261px;
+    height: 275px;
+}
 .card-button {
     display: inline-block;
     position: relative;
@@ -436,6 +440,12 @@ div.box4 {
     }
     .page-gallery .div-title span.city {
         font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 1237px) {
+    .div-card-spacer{
+        margin-bottom: -250px;
     }
 }
 
