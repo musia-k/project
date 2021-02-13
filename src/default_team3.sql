@@ -2,10 +2,10 @@
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Feb 12, 2021 at 07:28 PM
--- Server version: 8.0.23
--- PHP Version: 7.3.19-1~deb10u1
+-- Host: 127.0.0.1:3306
+-- Generation Time: Feb 13, 2021 at 09:59 AM
+-- Server version: 8.0.22
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `project2`
+-- Database: `default_team3`
 --
 
 -- --------------------------------------------------------
@@ -39,6 +39,16 @@ CREATE TABLE `cars` (
   `price` int NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `cars`
+--
+
+INSERT INTO `cars` (`id`, `brand`, `type`, `category`, `picturename`, `featurename`, `picturepath`, `featurepath`, `price`, `timestamp`) VALUES
+(1, 'Skoda Fabia', '1.4 / Gasoline / Mechanic', 'ECONOM', 'skoda-fabia.jpg', 'Picture1.png', '../uploads/skoda-fabia.jpg', '../uploads/Picture1.png', 18, '2021-02-12 18:55:25'),
+(2, 'Hyundai Accent', '1.4 / Gasoline / Auto', 'ECONOM', 'hyundai-accent.jpg', 'Picture2.png', '../uploads/hyundai-accent.jpg', '../uploads/Picture2.png', 22, '2021-02-13 09:54:20'),
+(3, 'Suzuki Vitara', '1.4 / Gasoline / Auto', 'SUV', 'grand-vitara.jpg', 'Picture3.png', '../uploads/grand-vitara.jpg', '../uploads/Picture3.png', 18, '2021-02-13 09:55:17'),
+(4, 'Citroen C-Elysee', '1.6 / Gasoline / Auto', 'ECONOM', 'citroen-elyssee.jpg', 'Picture4.png', '../uploads/citroen-elyssee.jpg', '../uploads/Picture4.png', 24, '2021-02-13 09:55:53');
 
 -- --------------------------------------------------------
 
@@ -85,7 +95,7 @@ ALTER TABLE `webadmin`
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `webadmin`
