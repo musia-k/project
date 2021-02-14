@@ -3,12 +3,6 @@
     max-width: 1140px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.left-column {
-
-}
-.right-column {
-
-}
 .div-title {
     background-color: rgba(196, 196, 196, 0.3);
     border-left: 0.5rem solid #5A5B95;
@@ -117,8 +111,6 @@ img#faq-img {
     font-weight: 500;
     margin-bottom: 4px;
 }
-.div-card-type {
-}
 .div-card-type p {
     margin: 0 auto;
     width: 60px;
@@ -175,6 +167,10 @@ img#faq-img {
 .div-card-button {
     display: inline;
     padding: 0;
+}
+.div-card-spacer {
+    width: 261px;
+    height: 275px;
 }
 .card-button {
     display: inline-block;
@@ -444,6 +440,12 @@ div.box4 {
     }
     .page-gallery .div-title span.city {
         font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 1237px) {
+    .div-card-spacer{
+        margin-bottom: -250px;
     }
 }
 

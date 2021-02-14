@@ -1,6 +1,11 @@
 <?php
 $page = "gallery";
 include "header.php"; 
+include 'adminpanel/config.php';
+
+$sql = "SELECT * FROM cars";
+$result = $conn->query($sql);
+
 ?> 
 
 <!-- Create the content here -->
@@ -14,7 +19,7 @@ include "header.php";
             <div class="col-7 col-sm-7 col-md-7 col-lg-6 col-xl-7 justify-content-evenly">
 
                 <!-- title city -->
-                <div class="div-title d-block d-lg-block">
+                <div class="div-title d-block d-lg-block col-12">
                     <h1>Rent a car in <span class="city">Helsinki</span></h1>
                 </div>
 
@@ -72,121 +77,209 @@ include "header.php";
                 </div>
                 <!-- end calendar -->
 
-                <!-- row -->
-                <div class="row justify-content-center">
-                    <!-- left card -->
-                    <div class="col-12 col-lg">
-                        <!-- Car1 -->
-                        <div class="col-12 div-card mx-auto">
-                            <div class="div-card-header">
-                                <h2>Skoda Fabia</h2>
-                                <p>1.4 / Gasoline / Mechanic</p>
-                                <div class="div-card-type">
-                                    <p>ECONOM</p>
+                <!-- if car is even -->
+                <?php
+                $i = 0;
+                if ($result->num_rows > 0 && $result->num_rows % 2 == 0){
+                    while ($row = $result->fetch_assoc()){
+                        $i++;
+                        if ($i == 1 || $i%2 == 1){
+                ?>
+                        <!-- row -->
+                        <div class="row justify-content-evenly">
+                            
+                            <!-- Car<?php echo $i; ?> -->
+                            <div class="col-12 col-lg">
+                                <div class="div-card mx-auto">
+                                    <div class="div-card-header">
+                                        <h2><?php echo $row['brand']; ?></h2>
+                                        <p><?php echo $row['type']; ?></p>
+                                        <div class="div-card-type">
+                                            <p><?php echo $row['category']; ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="div-card-img">
+                                        <img src="<?php echo "uploads/".$row['picturename']; ?>" alt="<?php echo $row['brand']; ?>">
+                                    </div>
+                                    <div class="div-card-footer">
+                                        <div class="div-card-extra">
+                                            <img src="<?php echo "uploads/".$row['featurename']; ?>" alt="">
+                                        </div>
+                                        <div class="div-card-price">
+                                            <p>from </p><h2><?php echo $row['price']; ?>€</h2>
+                                        </div>
+                                        <div class="div-card-button">
+                                            <a href="#" class="card-button">Rent in 1 click</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="div-card-img">
-                                <img src="src/images/car-details/skoda-fabia.jpg" alt="Skoda Fabia">
-                            </div>
-                            <div class="div-card-footer">
-                                <div class="div-card-extra">
-                                    <img src="src/images/car-details/Picture1.png" alt="">
-                                </div>
-                                <div class="div-card-price">
-                                    <p>from </p><h2>18€</h2>
-                                </div>
-                                <div class="div-card-button">
-                                    <a href="#" class="card-button">Rent in 1 click</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end car1 -->
+                            </div>                         
+                            <!-- end car<?php echo $i; ?> -->
+                <?php
+                        }
+                        if ($i%2 == 0){
+                ?>
 
-                        <!-- car3 -->
-                        <div class="col-12 div-card mx-auto">
-                            <div class="div-card-header">
-                                <h2>Suzuki Vitara</h2>
-                                <p>1.4 / Gasoline / Auto</p>
-                                <div class="div-card-type">
-                                    <p style="background-color: rgb(136, 177, 255);">suv</p>
+                            <!-- car<?php echo $i; ?> -->
+                            <div class="col-12 col-lg">
+                                <div class="div-card mx-auto">
+                                    <div class="div-card-header">
+                                        <h2><?php echo $row['brand']; ?></h2>
+                                        <p><?php echo $row['type']; ?></p>
+                                        <div class="div-card-type">
+                                            <p><?php echo $row['category']; ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="div-card-img">
+                                        <img src="<?php echo "uploads/".$row['picturename']; ?>" alt="<?php echo $row['brand']; ?>">
+                                    </div>
+                                    <div class="div-card-footer">
+                                        <div class="div-card-extra">
+                                            <img src="<?php echo "uploads/".$row['featurename']; ?>" alt="">
+                                        </div>
+                                        <div class="div-card-price">
+                                            <p>from </p><h2><?php echo $row['price']; ?>€</h2>
+                                        </div>
+                                        <div class="div-card-button">
+                                            <a href="#" class="card-button">Rent in 1 click</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="div-card-img">
-                                <img src="src/images/car-details/grand-vitara.jpg" alt="Suzuki Vitara">
-                            </div>
-                            <div class="div-card-footer">
-                                <div class="div-card-extra">
-                                    <img src="src/images/car-details/Picture1.png" alt="">
-                                </div>
-                                <div class="div-card-price">
-                                    <p>from </p><h2>18€</h2>
-                                </div>
-                                <div class="div-card-button">
-                                    <a href="#" class="card-button">Rent in 1 click</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end car3 -->
-                    </div>
-                    <!-- end left card -->
+                            <!-- end car<?php echo $i; ?> -->
 
-                    <!-- right card -->
-                    <div class="col-12 col-lg mx-auto">
-
-                        <!-- car2 -->
-                        <div class="col-12 div-card mx-auto">
-                            <div class="div-card-header">
-                                <h2>Hyundai Accent</h2>
-                                <p>1.4 / Gasoline / Auto</p>
-                                <div class="div-card-type">
-                                    <p>econom</p>
-                                </div>
-                            </div>
-                            <div class="div-card-img">
-                                <img src="src/images/car-details/hyundai-accent.jpg" alt="Hyundai" style="/* margin-top: -20px; */">
-                            </div>
-                            <div class="div-card-footer">
-                                <div class="div-card-extra">
-                                    <img src="src/images/car-details/Picture2.png" alt="">
-                                </div>
-                                <div class="div-card-price">
-                                    <p>from </p><h2>22€</h2>
-                                </div>
-                                <div class="div-card-button">
-                                    <a href="#" class="card-button">Rent in 1 click</a>
-                                </div>
-                            </div>
                         </div>
-                        <!-- end car2 -->
+                        <!-- end row -->
+                <?php
+                        }
+                    }
+                }
+                ?>
 
-                        <!-- car4 -->
-                        <div class="col-12 div-card mx-auto">
-                            <div class="div-card-header">
-                                <h2>Citroen C-Elysee</h2>
-                                <p>1.6 / Gasoline / Auto</p>
-                                <div class="div-card-type">
-                                    <p>econom</p>
+                <!-- if car is odd -->
+                <?php
+                $lastRow = $result->num_rows;
+                if ($result->num_rows == 1 || $result->num_rows % 2 == 1){
+                    while ($row = $result->fetch_assoc()){
+                        $i++;
+                        if ($i == 1 || $i%2 == 1){
+                            if ($i != $lastRow){
+                ?>
+                            <!-- row -->
+                            <div class="row justify-content-evenly">
+                                
+                                <!-- Car<?php echo $i; ?> -->
+                                <div class="col-12 col-lg">
+                                    <div class="div-card mx-auto">
+                                        <div class="div-card-header">
+                                            <h2><?php echo $row['brand']; ?></h2>
+                                            <p><?php echo $row['type']; ?></p>
+                                            <div class="div-card-type">
+                                                <p><?php echo $row['category']; ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="div-card-img">
+                                            <img src="<?php echo "uploads/".$row['picturename']; ?>" alt="<?php echo $row['brand']; ?>">
+                                        </div>
+                                        <div class="div-card-footer">
+                                            <div class="div-card-extra">
+                                                <img src="<?php echo "uploads/".$row['featurename']; ?>" alt="">
+                                            </div>
+                                            <div class="div-card-price">
+                                                <p>from </p><h2><?php echo $row['price']; ?>€</h2>
+                                            </div>
+                                            <div class="div-card-button">
+                                                <a href="#" class="card-button">Rent in 1 click</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                         
+                                <!-- end car<?php echo $i; ?> -->
+                <?php
+                            }
+                            elseif ($i == $lastRow){
+                ?>
+                            <!-- row -->
+                            <div class="row justify-content-evenly">
+                                
+                                <!-- Car<?php echo $i; ?> -->
+                                <div class="col-12 col-lg">
+                                    <div class="div-card mx-auto">
+                                        <div class="div-card-header">
+                                            <h2><?php echo $row['brand']; ?></h2>
+                                            <p><?php echo $row['type']; ?></p>
+                                            <div class="div-card-type">
+                                                <p><?php echo $row['category']; ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="div-card-img">
+                                            <img src="<?php echo "uploads/".$row['picturename']; ?>" alt="<?php echo $row['brand']; ?>">
+                                        </div>
+                                        <div class="div-card-footer">
+                                            <div class="div-card-extra">
+                                                <img src="<?php echo "uploads/".$row['featurename']; ?>" alt="">
+                                            </div>
+                                            <div class="div-card-price">
+                                                <p>from </p><h2><?php echo $row['price']; ?>€</h2>
+                                            </div>
+                                            <div class="div-card-button">
+                                                <a href="#" class="card-button">Rent in 1 click</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                         
+                                <!-- end car<?php echo $i; ?> -->
+
+                                <!-- spacer -->
+                                <div class="col-12 col-lg">
+                                    <div class="div-card-spacer mx-auto">
+                                    </div>
+                                </div>
+                                <!-- spacer -->
+
+                            </div>
+                            <!-- end row -->
+                
+                <?php                
+                            }
+                        }
+                        elseif ($i%2 == 0) {
+                ?>
+                            <!-- car<?php echo $i; ?> -->
+                            <div class="col-12 col-lg">
+                                <div class="div-card mx-auto">
+                                    <div class="div-card-header">
+                                        <h2><?php echo $row['brand']; ?></h2>
+                                        <p><?php echo $row['type']; ?></p>
+                                        <div class="div-card-type">
+                                            <p><?php echo $row['category']; ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="div-card-img">
+                                        <img src="<?php echo "uploads/".$row['picturename']; ?>" alt="<?php echo $row['brand']; ?>">
+                                    </div>
+                                    <div class="div-card-footer">
+                                        <div class="div-card-extra">
+                                            <img src="<?php echo "uploads/".$row['featurename']; ?>" alt="">
+                                        </div>
+                                        <div class="div-card-price">
+                                            <p>from </p><h2><?php echo $row['price']; ?>€</h2>
+                                        </div>
+                                        <div class="div-card-button">
+                                            <a href="#" class="card-button">Rent in 1 click</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="div-card-img">
-                                <img src="src/images/car-details/citroen-elyssee.jpg" alt="Citroen C-Elysee" style="/* margin-top: -20px; */">
-                            </div>
-                            <div class="div-card-footer">
-                                <div class="div-card-extra">
-                                    <img src="src/images/car-details/Picture3.png" alt="">
-                                </div>
-                                <div class="div-card-price">
-                                    <p>from </p><h2>24€</h2>
-                                </div>
-                                <div class="div-card-button">
-                                    <a href="#" class="card-button">Rent in 1 click</a>
-                                </div>
-                            </div>
+                            <!-- end car<?php echo $i; ?> -->
+
                         </div>
-                        <!-- end car4 -->
-                    </div>
-                </div>
-                <!-- end row -->
+                        <!-- end row -->
+                <?php
+                        }
+                    }
+                }
+                ?>
 
             </div>
             <!-- end left column -->
