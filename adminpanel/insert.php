@@ -16,21 +16,23 @@
     $checkFeature = exif_imagetype($_FILES['feature']['tmp_name']);
 
     if (isset($_POST['insert'])){
-        if (empty($_POST['brand']) || empty($_POST['type']) || empty($_POST['category']) || empty($_POST['price']) || empty($_FILES['feature']['size']) || empty($_FILES['picture']['size'])) {
+        if (empty($_POST['brand']) || empty($_POST['type']) || empty($_POST['category']) || empty($_POST['price']) || empty($_POST['additional']) || empty($_FILES['feature']['size']) || empty($_FILES['picture']['size'])) {
             array_push($error, "Please fill all the fields");
             $uploadOk = 0;            
         }
         else { 
+            // declaring variables for database query
             $brand = $_POST['brand'];
             $type = $_POST['type'];
             $category = $_POST['category'];
             $price = $_POST['price'];
+            $additional = $_POST['additional'];
             $featurepath = $target_dir . basename($_FILES['feature']['name']);
             $picturepath = $target_dir . basename($_FILES['picture']['name']);
             $picturename = basename($_FILES['picture']['name']);
             $featurename = basename($_FILES['feature']['name']);
 
-            $sql = "INSERT INTO cars (`brand`, `type`, `category`, `picturename`, `featurename`, `picturepath`, `featurepath`, `price`) VALUES ('$brand', '$type', '$category', '$picturename', '$featurename', '$picturepath', '$featurepath', '$price')";
+            $sql = "INSERT INTO cars (`brand`, `type`, `category`, `additional`, `picturename`, `featurename`, `picturepath`, `featurepath`, `price`) VALUES ('$brand', '$type', '$category', '$additional', '$picturename', '$featurename', '$picturepath', '$featurepath', '$price')";
 
             // picture extension validation
             if (in_array($checkPicture, $allowedImageExtension)){
@@ -69,7 +71,12 @@
                 if (move_uploaded_file($_FILES['picture']['tmp_name'], $picturepath) && move_uploaded_file($_FILES['feature']['tmp_name'], $featurepath)) {
                     $uploadOk = 1;
                 } else {
-                    array_push($error, "Sorry, there was an error while uploading your file.");
+                    if (!is_writable($target_dir)){
+                        array_push($error, "The path is not writtable, contact admin!");
+                    }
+                    else{
+                        array_push($error, "Sorry, there was an error while uploading your file.");
+                    }
                     $uploadOk = 0;
                 }
             }
@@ -112,6 +119,21 @@
             max-height: 100px;
             max-width: 150px;
         }
+        th, td {
+            padding: 5px;
+        }
+        input {
+            width: 100%;
+        }
+        input[type=submit] {
+            width: fit-content;
+        }
+        select {
+            width: 100%;
+        }
+        textarea {
+            width: 100%;
+        }
     </style>
     <title>Insert a New Car</title>
 </head>
@@ -143,6 +165,14 @@
                         </td>
                         <td>
                             <input type="number" name="price" id="price" min=0>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="additional">Additional Info: </label>
+                        </td>
+                        <td>
+                            <textarea name="additional" id="additional" rows="4"></textarea>
                         </td>
                     </tr>
                     <tr>

@@ -1,6 +1,5 @@
 <?php
-include 'config.php';
-include 'session';
+include 'session.php';
 
 // get handling
 $id = $_GET['id'];
@@ -22,15 +21,16 @@ $checkPicture = exif_imagetype($_FILES['picture']['tmp_name']);
 $checkFeature = exif_imagetype($_FILES['feature']['tmp_name']);
 
 if (isset($_POST['insert'])){
-    if (empty($_POST['brand']) || empty($_POST['type']) || empty($_POST['category']) || empty($_POST['price']) || empty($_FILES['feature']['size']) || empty($_FILES['picture']['size'])) {
+    if (empty($_POST['brand']) || empty($_POST['type']) || empty($_POST['category']) || empty($_POST['price']) || empty($_POST['additional']) || empty($_FILES['feature']['size']) || empty($_FILES['picture']['size'])) {
         array_push($error, "Please fill all the fields");
-        $uploadOk = 0;
+        $uploadOk = 0;            
     }
     else { 
         $brand = $_POST['brand'];
         $type = $_POST['type'];
         $category = $_POST['category'];
         $price = $_POST['price'];
+        $additional = $_POST['additional'];
         $feature = $target_dir . basename($_FILES['feature']['name']);
         $picture = $target_dir . basename($_FILES['picture']['name']);
 
@@ -120,8 +120,23 @@ if (isset($_POST['insert'])){
             margin: 15px auto 0 auto;
         }
         img {
-            max-height: 150px;
-            max-width: 170px;
+            max-height: 215px;
+            max-width: 294px;
+        }
+        th, td {
+            padding: 5px;
+        }
+        input {
+            width: 100%;
+        }
+        input[type=submit] {
+            width: fit-content;
+        }
+        select {
+            width: 100%;
+        }
+        textarea {
+            width: 100%;
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -156,6 +171,14 @@ if (isset($_POST['insert'])){
                         </td>
                         <td>
                             <input type="number" name="price" id="price" min=0 value="<?php echo $row['price']; ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="additional">Additional Info: </label>
+                        </td>
+                        <td>
+                            <textarea name="additional" id="additional" value="<?php echo $row['additional']; ?>" rows="4"></textarea>
                         </td>
                     </tr>
                     <tr>
