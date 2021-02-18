@@ -22,11 +22,11 @@
         }
         else { 
             // declaring variables for database query
-            $brand = $_POST['brand'];
-            $type = $_POST['type'];
-            $category = $_POST['category'];
-            $price = $_POST['price'];
-            $additional = $_POST['additional'];
+            $brand = htmlentities($_POST['brand'], ENT_QUOTES);
+            $type = htmlentities($_POST['type'], ENT_QUOTES);
+            $category = htmlentities($_POST['category'], ENT_QUOTES);
+            $price = htmlentities($_POST['price'], ENT_QUOTES);
+            $additional = htmlentities($_POST['additional'], ENT_QUOTES);
             $featurepath = $target_dir . basename($_FILES['feature']['name']);
             $picturepath = $target_dir . basename($_FILES['picture']['name']);
             $picturename = basename($_FILES['picture']['name']);
