@@ -1,23 +1,22 @@
 .container-content {
-    min-height: 600px;
+    max-width: 1320px;
 }
 .login-form-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 600px;
+    max-width: 1100px;
+    width: 80%;
+    margin: 30px auto;
+    box-shadow: 5px 10px 15px #aaa;
+    border-radius: 30px;
 }
 .login-form {
-    max-width: 500px;
-    width: 80%;
-    margin: auto auto;
-    padding: 15px;
-    border: 0 1px 1px 1px rgba(0, 0, 0, 0.25);
-    box-shadow: 0px 4px 4px #5A5B95;
-    border-radius: 5px;
+    width: 90%;
+    margin: 30px auto;
 }
 .login-form .input-group {
     width: auto;
+}
+.login-form h2 {
+    margin-bottom: 15px;
 }
 .form-links{
     margin-left: 3px;
@@ -25,4 +24,7 @@
 }
 .form-links a {
     text-decoration: none;
+}
+.form-img-container img {
+    max-width: 100%;
 }
