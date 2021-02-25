@@ -1,14 +1,6 @@
 <!-- page styles -->
 <?php
-    // page styles
-    $pagestyle = "";
-
-    // main container class
-    $containerclass = "";
-
-    // web title
-    $webtitle = "";
-
+    
     switch ($page) {
         case 'home':
             $pagestyle = "styles/home.css";

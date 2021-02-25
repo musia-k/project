@@ -1,0 +1,28 @@
+.container-content {
+    min-height: 600px;
+}
+.login-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+.login-form {
+    max-width: 500px;
+    width: 80%;
+    margin: auto auto;
+    padding: 15px;
+    border: 0 1px 1px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px #5A5B95;
+    border-radius: 5px;
+}
+.login-form .input-group {
+    width: auto;
+}
+.form-links{
+    margin-left: 3px;
+    margin-bottom: 15px;
+}
+.form-links a {
+    text-decoration: none;
+}
