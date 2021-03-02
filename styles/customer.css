@@ -14,7 +14,7 @@
     min-height: inherit;
     width: 50px;
     position: absolute;
-    height: 100%;
+    height: inherit;
     overflow-y: hidden;
     background-color: #5A5B95;
     transition-duration: 500ms;
@@ -36,7 +36,7 @@
     color: #ddd;
 }
 .sidebar-link a:hover {
-    background-color: turquoise;
+    background-color: #3b9d93;
 }
 
 .sidebar-label {
@@ -54,22 +54,6 @@
     width: 100%;
     text-align: center;
 }
-
-
-/* end sidebar */
-
-/* content */
-.container-content .content-wrapper {
-    max-width: 1090px;
-    margin-left: 50px;
-    width: calc( inherit - 50px );
-    /* position: absolute; */
-    padding: 15px;
-    border: 5px solid black;
-    transition-duration: 500ms;
-}
-
-/* end content */
 
 /* sidebar toggle */
 .container-content.expand .sidebar-wrapper {
@@ -90,3 +74,17 @@
     width: 100%;
 }
 /* end sidebar toggle */
+
+/* end sidebar */
+
+/* content */
+.container-content .content-wrapper {
+    max-width: 1090px;
+    margin-left: 50px;
+    width: calc((100%) - 50px);
+    padding: 15px;
+    border: 5px solid black;
+    transition-duration: 500ms;
+}
+
+/* end content */
