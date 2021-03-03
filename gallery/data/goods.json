@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "name": "Skoda Fabia",
+        "price": "18",
+        "img": "img/goods/citroen.jpg",
+        "feature": "img/goods/citroen_feature.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Hyundai Accent",
+        "price": "22",
+        "img": "img/goods/hyundai.jpg",
+        "feature": "img/goods/hyundai_feature.png"
+    },
+    {
+        "id": "3",
+        "name": "Suzuki Vitara",
+        "price": "44",
+        "img": "img/goods/suzuki.png",
+        "feature": "img/goods/suzuki_feature.jpg"
+    },
+    {
+        "id": "4",
+        "name": "Citroen C-Elysee",
+        "price": "24",
+        "img": "img/goods/citroen.jpg",
+        "feature": "img/goods/citroen_feature.jpg"
+    },
+    {
+        "id": "5",
+        "name": "Hyundai Elantra 2019",
+        "price": "24",
+        "img": "img/goods/hyundai5.jpg",
+        "feature": "img/goods/hyundai5_feature.jpg"
+    }
+]

@@ -1,0 +1,238 @@
+'use strict';
+
+// Module of cart
+var cart = (function($) {
+
+    var cartData,
+        opts = {};
+
+    // Initialization of the module
+    function init(options) {
+        _initOptions(options);
+        updateData();
+        if (opts.renderCartOnInit) {
+            renderCart();
+        }
+        if (opts.renderMenuCartOnInit) {
+            renderMenuCart();
+        }
+        _bindHandlers();
+    }
+
+    // Initialization of the settings
+    function _initOptions(options) {
+        var defaultOptions = {
+            renderCartOnInit: true,
+            renderMenuCartOnInit: true,
+            elAddToCart: '.js-add-to-cart',
+            attrId: 'data-id',
+            attrName: 'data-name',
+            attrPrice: 'data-price',
+            attrDelta: 'data-delta',
+            elCart: '#cart',
+            elTotalCartCount: '#total-cart-count',
+            elTotalCartSumma: '#total-cart-summa',
+            elCartItem: '.js-cart-item',
+            elCartCount: '.js-count',
+            elCartSumma: '.js-summa',
+            elChangeCount: '.js-change-count',
+            elRemoveFromCart: '.js-remove-from-cart'
+        };
+        _.defaults(options || {}, defaultOptions);
+        opts = _.clone(options);
+    }
+
+    // Events
+    function _bindHandlers() {
+        _onClickAddBtn();
+        _onClickChangeCountInCart();
+        _onClickRemoveFromCart();
+    }
+
+
+
+
+
+    // Getting Gata
+    function updateData() {
+        cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        return cartData;
+    }
+
+    // Return the data
+    function getData() {
+        return cartData;
+    }
+
+    // Save data in localStorage
+    function saveData() {
+        localStorage.setItem('cart', JSON.stringify(cartData));
+        return cartData;
+    }
+
+    // Cleaning Data
+    function clearData() {
+        cartData = [];
+        saveData();
+        return cartData;
+    }
+
+    // Find cartData according to id
+    function getById(id) {
+        return _.findWhere(cartData, {id: id});
+    }
+
+    // Adding order to collection
+    function add(item) {
+        var oldItem;
+        updateData();
+        oldItem = getById(item.id);
+        if(!oldItem) {
+            cartData.push(item);
+        } else {
+            oldItem.count = oldItem.count + item.count;
+        }
+        saveData();
+        return item;
+    }
+
+    // Deleting car from collection
+    function remove(id) {
+        updateData();
+        cartData = _.reject(cartData, function(item) {
+            return item.id === id;
+        });
+        saveData();
+        return cartData;
+    }
+
+    // Changling the number of
+    function changeCount(id, delta) {
+        var item;
+        updateData();
+        item = getById(id);
+        if(item) {
+            item.count = item.count + delta;
+            if (item.count < 1) {
+                remove(id);
+            }
+            saveData();
+        }
+        return _.findWhere(cartData, {id: id}) || {};
+    }
+
+    // Returning (amount)
+    function getCount() {
+        return _.size(cartData);
+    }
+
+    // Retuning cmount at all
+    function getCountAll() {
+        return _.reduce(cartData, function(sum, item) {return sum + item.count}, 0);
+    }
+
+    // Return overall sum
+    function getSumma() {
+        return _.reduce(cartData, function(sum, item) {return sum + item.count * item.price}, 0);
+    }
+
+
+
+
+
+
+    // Рендерим корзину
+    function renderCart() {
+        var template = _.template($('#cart-template').html()),
+            data = {
+                goods: cartData
+            };
+        $(opts.elCart).html(template(data));
+        renderTotalCartSumma();
+    }
+
+    // Рендерим количество товаров в меню
+    function renderMenuCart() {
+        var countAll = getCountAll();
+        $(opts.elTotalCartCount).html(countAll !== 0 ? countAll : '');
+    }
+
+    // Рендерим общую сумму товаров
+    function renderTotalCartSumma() {
+        $(opts.elTotalCartSumma).html(getSumma());            
+    }
+
+
+
+    // Поиск продукта в корзине по id
+    function findCartElemById(id) {
+        return $(opts.elCartItem + '[' + opts.attrId + '="'+id+'"]');
+    }
+
+    // Добавление в корзину
+    function _onClickAddBtn() {
+        $('body').on('click', opts.elAddToCart, function(e) {
+            var $this = $(this);
+            add({
+                id: +$this.attr(opts.attrId),
+                name: $this.attr(opts.attrName),
+                price: +$this.attr(opts.attrPrice),
+                count: 1
+            });    
+            renderMenuCart();
+            alert('Car is added to the cart');
+        });
+    }
+
+    // Меняем количество товаров в корзине
+    function _onClickChangeCountInCart() {
+        $('body').on('click', opts.elChangeCount, function(e) {
+            var $this = $(this),
+                id = +$this.attr(opts.attrId),
+                delta = +$this.attr(opts.attrDelta),
+                $cartElem = findCartElemById(id),
+                cartItem = changeCount(id, delta);
+            if (cartItem.count) {
+                $cartElem.find(opts.elCartCount).html(cartItem.count);
+                $cartElem.find(opts.elCartSumma).html(cartItem.count * cartItem.price);
+            } else {
+                $cartElem.remove();
+            }
+            renderMenuCart();
+            renderTotalCartSumma();
+        });
+    }
+
+    // Удаляем товар из корзине
+    function _onClickRemoveFromCart() {
+        $('body').on('click', opts.elRemoveFromCart, function(e) {
+            if(!confirm('Delete the car order?')) return false;
+            var $this = $(this),
+                id = +$this.attr(opts.attrId),
+                $cartElem = findCartElemById(id);
+            remove(id);
+            $cartElem.remove();
+            renderMenuCart();
+            renderTotalCartSumma();
+        });
+    }
+
+
+
+    // Экспортируем наружу
+    return {
+        init: init,
+        update: updateData,
+        getData: getData,
+        save: saveData,
+        clearData: clearData,
+        getById: getById,
+        add: add,
+        remove: remove,
+        changeCount: changeCount,
+        getCount: getCount,
+        getCountAll: getCountAll,
+        getSumma: getSumma
+    }
+
+})(jQuery);
