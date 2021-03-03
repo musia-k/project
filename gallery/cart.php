@@ -13,12 +13,12 @@
         <h1>Cart</h1>
         <br />
         <ul class="nav nav-pills">
-            <li><a href="index.html">Catalogue</a></li>
-            <li><a href="catalog.html">Catalogue with filtering</a></li>
-            <li><a href="catalog-pag.html">Catalogue with the pag</a></li>
-            <li id="compare-tab"><a href="compare.html">Compare the goods<span class="badge"></span></a></li>
-            <li class="active"><a href="cart.html">Cart<span id="total-cart-count" class="badge"></span></a></li>
-            <li><a href="order.html">Order</a></li>
+            <li><a href="gallery.php">Catalogue</a></li>
+            <li><a href="catalog.php">Catalogue with filtering</a></li>
+            <li><a href="catalog-pag.php">Catalogue with the pag</a></li>
+            <li id="compare-tab"><a href="compare.php">Compare the goods<span class="badge"></span></a></li>
+            <li class="active"><a href="cart.php">Cart<span id="total-cart-count" class="badge"></span></a></li>
+            <li><a href="order.php">Order</a></li>
         </ul>
         <br />
         <div class="table-responsive">
@@ -40,7 +40,7 @@
         </div>
         <div>Overall: <span id="total-cart-summa">45</span> $.</div>
         <br />
-        <a class="btn btn-info" href="order.html">Order</a>
+        <a class="btn btn-info" href="order.php">Order</a>
     </div>
 
     <script id="cart-template" type="text/template">

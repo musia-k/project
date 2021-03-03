@@ -13,12 +13,12 @@
         <h1>Catalogue with pag</h1>
         <br>
         <ul class="nav nav-pills">
-            <li><a href="index.html">Catalogue</a></li>
-            <li><a href="catalog.html">Catalogue with filters</a></li>
-            <li class="active"><a href="catalog-pag.html">Catalogue wuth pag</a></li>
-            <li id="compare-tab"><a href="compare.html">Compare the goods<span class="badge"></span></a></li>
-            <li><a href="cart.html">Cart<span id="total-cart-count" class="badge"></span></a></li>
-            <li><a href="order.html">Order</a></li>
+            <li><a href="gallery.php">Catalogue</a></li>
+            <li><a href="catalog.php">Catalogue with filters</a></li>
+            <li class="active"><a href="catalog-pag.php">Catalogue wuth pag</a></li>
+            <li id="compare-tab"><a href="compare.php">Compare the goods<span class="badge"></span></a></li>
+            <li><a href="cart.php">Cart<span id="total-cart-count" class="badge"></span></a></li>
+            <li><a href="order.php">Order</a></li>
         </ul>
         <br />
         <div class="row">

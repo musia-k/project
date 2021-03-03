@@ -41,7 +41,7 @@ var order = (function($) {
             count: cart.getCountAll(),
             summa: cart.getSumma()
         };
-        ui.$messageCart.html(template(data));
+        ui.$messagecart.php(template(data));
     }
 
     // case: empty cart

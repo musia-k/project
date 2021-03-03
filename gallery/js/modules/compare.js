@@ -89,7 +89,7 @@ var compare = (function($) {
         var comparedGoodsStr = $.cookie(settings.cookie.goods),
             comparedGoodsArr = comparedGoodsStr ? comparedGoodsStr.split(',') : [],
             comparedCategoryId = $.cookie(settings.cookie.category),
-            compareHref = 'compare.html' + (comparedGoodsArr.length ? '#' + encodeURIComponent(comparedCategoryId + '|' + comparedGoodsStr) : '');
+            compareHref = 'compare.php' + (comparedGoodsArr.length ? '#' + encodeURIComponent(comparedCategoryId + '|' + comparedGoodsStr) : '');
 
         // updating sign
         ui.$compareTab.find('span').text(comparedGoodsArr.length || '');

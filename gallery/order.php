@@ -12,12 +12,12 @@
     <div class="container">
         <h1>Order</h1>
         <ul class="nav nav-pills">
-            <li><a href="index.html">Catalogue</a></li>
-            <li><a href="catalog.html">Catalogue with filters</a></li>
-            <li><a href="catalog-pag.html">Catalogue with pag</a></li>
-            <li id="compare-tab"><a href="compare.html">Comparison<span class="badge"></span></a></li>
-            <li><a href="cart.html">Chart<span id="total-cart-count" class="badge"></span></a></li>
-            <li class="active"><a href="order.html">Order</a></li>
+            <li><a href="gallery.php">Catalogue</a></li>
+            <li><a href="catalog.php">Catalogue with filters</a></li>
+            <li><a href="catalog-pag.php">Catalogue with pag</a></li>
+            <li id="compare-tab"><a href="compare.php">Comparison<span class="badge"></span></a></li>
+            <li><a href="cart.php">Chart<span id="total-cart-count" class="badge"></span></a></li>
+            <li class="active"><a href="order.php">Order</a></li>
         </ul>
         <br />
         <br />
