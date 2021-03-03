@@ -57,7 +57,7 @@
 
 /* sidebar toggle */
 .container-content.expand .sidebar-wrapper {
-    width: 250px;
+    width: 230px;
     transition-duration: 500ms;
 }
 .container-content.expand .content-wrapper {
@@ -68,7 +68,6 @@
 .container-content.expand .sidebar-wrapper .sidebar-label {
     display: inline-block;
     transition-duration: 500ms;
-
 }
 .container-content.expand .sidebar-link a {
     width: 100%;
@@ -79,9 +78,9 @@
 
 /* content */
 .container-content .content-wrapper {
-    max-width: 1090px;
-    margin-left: 50px;
-    width: calc((100%) - 50px);
+    max-width: 1070px;
+    margin-left: 70px;
+    width: calc((100%) - 70px);
     padding: 15px;
     border: 5px solid black;
     transition-duration: 500ms;
