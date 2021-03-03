@@ -4,13 +4,16 @@
     <meta charset="utf-8">
     <title>Filtering test</title>
     <meta name="description" content="Feature of filtering" />
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    
     <link href="components/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
+    
+    <?php include 'external-script.php'; ?>
+
 </head>
 
 <body data-page="catalogDB">
+<?php include 'navbar.php'; ?>
+
     <div class="container">
         <h1>Catalogue with pag</h1>
         <br>
@@ -121,5 +124,6 @@
     <script src="js/modules/cart.js" type="text/javascript"></script>
     <script src="js/modules/compare.js" type="text/javascript"></script>
     <script src="js/modules/main.js" type="text/javascript"></script>
+    <script src="js/modules/header-footer.js" type="text/javascript"></script>
 </body>
 </html>

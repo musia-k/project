@@ -4,18 +4,13 @@
     <meta charset="utf-8">
     <title>Filtering test</title>
     <meta name="description" content="Feature of filtering" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/header-footer.css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <?php include 'external-script.php'; ?>
     
 </head>
 <body data-page="catalog">
 <?php include 'navbar.php'; ?>
+
     <div class="container">
-        
         <h1>Catalogue</h1>
         <ul class="nav nav-pills">
             <li class="active"><a href="gallery.php">Catalogue</a></li>

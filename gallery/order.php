@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <title>Filtering test</title>
     <meta name="description" content="Feature of filtering" />
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <?php include 'external-script.php'; ?>
+
 </head>
 <body data-page="order">
+<?php include 'navbar.php'; ?>
+
     <div class="container">
         <h1>Order</h1>
         <ul class="nav nav-pills">
@@ -106,5 +107,6 @@
     <script src="js/modules/order.js" type="text/javascript"></script>
     <script src="js/modules/compare.js" type="text/javascript"></script>
     <script src="js/modules/main.js" type="text/javascript"></script>
+    <script src="js/modules/header-footer.js" type="text/javascript"></script>
 </body>
 </html>
