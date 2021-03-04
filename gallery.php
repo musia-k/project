@@ -1,3 +1,4 @@
+<?php $page = gallery; ?>
 <!doctype html>
 <html lang="en">
 <head>
