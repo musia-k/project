@@ -1,28 +1,10 @@
 <?php
 
-define('DB_HOST', 'localhost:3307');
-define('DB_USER', 'team3');
-define('DB_PASSWORD', 'EfVL534G');
-define('DB_NAME', 'default_team3');
+include_once './common.php';
 
 define('EMAIL_ADMIN', 'krasmed17@gmail.com');
 define('EMAIL_FROM_NAME', 'Kyselova Maryna');
 define('SITE', ' ');
-
-
-function connectDB() {
-    $errorMessage = 'Cannot connect to the server';
-    $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-    if (!$conn)
-        throw new Exception($errorMessage);
-    else {
-        $query = $conn->query('set names utf8');
-        if (!$query)
-            throw new Exception($errorMessage);
-        else
-            return $conn;
-    }
-}
 
 //getting from POST
 function getParam($param, $conn, $default = '') {
