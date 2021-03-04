@@ -13,8 +13,11 @@ var catalog = (function($) {
         var template = _.template($('#catalog-template').html()),
             $goods = $('#goods');
 
-        $.getJSON('data/goods.json', function(data) {
-            $goods.html(template({goods: data}));
+        /* $.getJSON('data/test.json', function(data) {
+            $goods.html(template({goods: data})); */
+
+            $.getJSON('scripts/gallery-fetch-data.php', function(data) {
+                $goods.html(template({goods: data}));
         });
     }
 

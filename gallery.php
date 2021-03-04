@@ -31,7 +31,7 @@
         <% _.each(goods, function(good) { %>
             <li class="good-item row">
                 <div class="col-md-4">
-                    <img class="good-item__img" src="<%- good.img %>" />
+                    <img class="good-item__img" src="img/goods/<%- good.img %>" />
                 </div>
                 <div class="col-md-8">
                     <div class="good-item__id">Articule <%= good.id %></div>
