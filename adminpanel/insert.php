@@ -1,6 +1,6 @@
 <?php
     require 'session.php';
-
+    
     $brand=$type=$category=$price=$picturepath=$featurepath="";
     $target_dir = '../img/goods/';
     $uploadOk = 1;
@@ -117,10 +117,35 @@
         }
         main {
             margin: 15px auto 0 auto;
+            
+        }
+        .wrapper-form {
+            position: relative;
+            margin-top: 100px;
+            padding: 50px;
+            max-width: 1040px;
+            background-color: rgba(196, 196, 196, 0.3);
+        }
+        .title-insert {
+            position: absolute;
+            top: -70px;
+            left: 0;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 32px;
+            color: #E5E5E5;
+            text-shadow: 3px 4px 4px #000000;
         }
         img {
             max-height: 100px;
             max-width: 150px;
+        }
+        table label {
+            width: 110px;
+        }
+        tr>td:last-child {
+            min-width: 285px;
+            width: 100%;
         }
         th, td {
             padding: 5px;
@@ -136,6 +161,18 @@
         }
         textarea {
             width: 100%;
+        }
+        .submit-btn {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .submit-btn input[type="submit"] {
+            color: white;
+            border: none;
+            padding: 13px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: rgba(139, 140, 181, 1);
         }
 
         /* nav */
@@ -163,76 +200,115 @@
     <?php include 'navbar.php' ?>
         <main>
             <form action="" method="post" enctype="multipart/form-data">
-                <table>
-                    <tr>
-                        <td>
-                            <label for="brand">Brand: </label>
-                        </td>
-                        <td>
-                            <input type="text" name="brand" id="brand">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="type">Type:</label>
-                        </td>
-                        <td>
-                            <input type="text" name="type" id="type">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="price">Price:</label>
-                        </td>
-                        <td>
-                            <input type="number" name="price" id="price" min=0>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="additional">Additional Info: </label>
-                        </td>
-                        <td>
-                            <textarea name="additional" id="additional" rows="4"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="category">Category:</label>
-                        </td>
-                        <td>
-                            <select name="category">
-                                <option value="SUV">SUV</option>
-                                <option value="ECONOM">ECONOM</option>
-                                <option value="BUSINESS">BUSINESS</option>
-                                <option value="CONVERTIBLE">CONVERTIBLE</option>
-                                <option value="OTHER">OTHER</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="feature">Feature:</label>
-                        </td>
-                        <td>
-                            <input type="file" name="feature" id="feature">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="picture">Picture:</label>
-                        </td>
-                        <td>
-                            <input type="file" name="picture" id="picture">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td style="text-align: right;">
-                            <input type="submit" name="insert" value="Insert New Record">
-                        </td>
-                    </tr>
-                </table>
+                <div class="wrapper-form mx-auto">
+                    <div class="title-insert">
+                        NEW RECORD
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label for="name">Name: </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="name" id="name">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="brand">Brand: </label>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        $brand_query = "SELECT * FROM brands";
+                                        $brand_result = $conn->query($brand_query);
+                                        if ($brand_result) {
+                                            if ($brand_result->num_rows > 0){
+                                                echo '<select name="brand">';
+                                                while($row = $brand_result ->fetch_assoc()){
+                                                    echo '<option value="'. $row['id'] .'">'.$row['brand'].'</option>';
+                                                }
+                                                echo '</select>';
+                                            }
+                                            else {
+                                                echo "No value";
+                                            }
+                                        }
+                                        else {
+                                            echo '<option value="#">'. $conn->error .'</option>';
+                                        }
+                                        $conn->close();
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="type">Type:</label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="type" id="type">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="price">Price:</label>
+                                    </td>
+                                    <td>
+                                        <input type="number" name="price" id="price" min=0>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="category">Category:</label>
+                                    </td>
+                                    <td>
+                                        <select name="category">
+                                            <option value="SUV">SUV</option>
+                                            <option value="ECONOM">ECONOM</option>
+                                            <option value="BUSINESS">BUSINESS</option>
+                                            <option value="CONVERTIBLE">CONVERTIBLE</option>
+                                            <option value="OTHER">OTHER</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="feature">Feature:</label>
+                                    </td>
+                                    <td>
+                                        <input type="file" name="feature" id="feature">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="picture">Picture:</label>
+                                    </td>
+                                    <td>
+                                        <input type="file" name="picture" id="picture">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="col-12 col-md">
+                            <table>
+                            <tr>
+                                    <td>
+                                        <label for="additional">Additional Info: </label>
+                                    </td>
+                                    <td>
+                                        <textarea name="additional" id="additional" rows="4"></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 submit-btn">
+                        <input type="submit" name="insert" value="Insert a Record">
+                    </div>                                
+                </div>
             </form>
         </main>
     
