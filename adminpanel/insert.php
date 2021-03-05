@@ -128,7 +128,7 @@
             max-width: 1040px;
             background-color: rgba(196, 196, 196, 0.3);
         }
-        .title-insert {
+        .title-header {
             position: absolute;
             top: -70px;
             left: 0;
@@ -203,7 +203,7 @@
         <main>
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="wrapper-form mx-auto">
-                    <div class="title-insert">
+                    <div class="title-header">
                         NEW RECORD
                     </div>
                     <div class="row">
