@@ -1,0 +1,109 @@
+.container-main {
+    max-width: 1440px;
+}
+.custom-header {
+    color: #000000;
+    max-width: 1350px;
+    max-height: 175px;
+}
+.header-image{
+    margin-right: -4rem;
+    max-height: 150px;
+}
+
+
+/* footer */
+
+.custom-footer {
+    background-color: #5A5B95;
+    border-top: 3px solid #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #fff;
+    color: #FFFFFF;
+}
+.col_1 {
+    border-right: 3px solid #fff;
+    max-width: 230px ;
+    width: fit-content ;
+}
+.col_2 {
+    border-right: 3px solid #fff;
+    max-width: 230px ;
+    width: fit-content ;
+}
+.col_3 {
+    max-width: 300px ;
+    width: 80% ;
+}
+.col_4 {
+    border-left: 3px solid #fff;
+    max-width: 230px ;
+    width: fit-content ;
+}
+
+.custom-footer h3 {
+    font-weight: bold;
+    font-size: 14px;
+}
+.text-footer {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #fff;
+    /* fonts */
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+}
+.text-footer h3 {
+    font-weight: bold;
+    font-size: 14px;
+}
+.text-footer a {
+    color: #fff;
+    font-family: Regular 400;
+    font-style: normal;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.active{
+    color: black;
+    border-bottom: 3px solid #5A5B95;
+}
+.navbar-mobile-nav {
+    list-style-type: none;
+}
+@media screen and (max-width: 768px) {
+            .col_3{
+            display: none;
+            }
+            .col_2{
+                border-right-width: 0px !important;
+            }
+            .row{
+                max-height: fit-content;
+                max-width: fit-content;
+            }
+            .row .text-footer{
+                font-size: 5px;
+            }
+            .row .text-footer h3{
+                font-size: 5px;
+            }
+            .row .text-footer a{
+                font-size: 5px;
+            }
+        .custom-header {
+            margin-left: -30px;
+            margin-right: 0;
+        }
+        .mobile-nav-margin-top {
+            margin-top: -80px;
+        }
+        .mobile-nav-margin-left {
+            margin-left: 37%;
+        }
+    }
