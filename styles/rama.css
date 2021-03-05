@@ -35,7 +35,7 @@
 
 /* FAQ Page */
 .container-main.page-faq {
-    background-image: url(src/images/figure-rotated.jpg), url(src/images/figure.jpg);
+    background-image: url(../src/images/figure-rotated.jpg), url(../src/images/figure.jpg);
     background-repeat: no-repeat, no-repeat;
     background-size: 100vw, 100vw;
     background-size: cover, cover;
@@ -67,7 +67,7 @@ img#faq-img {
 
 /* Gallery */
 .page-gallery.container-main{
-    background-image: url(src/images/figure-rotated.jpg);
+    background-image: url(../src/images/figure-rotated.jpg);
     background-position-x: 500px;
     background-position-y: 0px;
     background-repeat: no-repeat;
@@ -129,9 +129,11 @@ img#faq-img {
 .div-card-img {
     text-align: center;
     max-height: 150px;
+    max-width: 261px;
 }
 .div-card-img img {
     max-height: 150px;
+    max-width: 261px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -430,7 +432,7 @@ div.box4 {
         left: 50px;
     }
     .page-gallery.container-main{
-        background-image: url(src/images/figure-rotated.jpg);
+        background-image: url(../src/images/figure-rotated.jpg);
         background-position-x: 400px;
         background-position-y: 00px;
         background-repeat: no-repeat;
@@ -451,7 +453,7 @@ div.box4 {
 
 @media screen and (max-width: 989px) {
     .page-gallery.container-main{
-        background-image: url(src/images/figure-rotated.jpg);
+        background-image: url(../src/images/figure-rotated.jpg);
         background-position-x: 100px;
         background-position-y: 00px;
         background-repeat: no-repeat;
@@ -466,7 +468,7 @@ div.box4 {
 @media screen and (max-width: 768px) {
     /* FAQ */
     .container-main.page-faq{
-        background-image: url(src/images/figure-rotated.jpg), url(src/images/figure.jpg);
+        background-image: url(../src/images/figure-rotated.jpg), url(../src/images/figure.jpg);
         background-repeat: no-repeat, no-repeat;
         background-size: 100vw, 100vw;
         background-size: cover, cover;
@@ -482,7 +484,7 @@ div.box4 {
     /* End of FAQ */
     /* gallery */
     .page-gallery.container-main{
-        background-image: url(src/images/figure-rotated.jpg);
+        background-image: url(../src/images/figure-rotated.jpg);
         background-position-x: 00px;
         background-position-y: 10px;
         background-repeat: no-repeat;
@@ -502,7 +504,7 @@ div.box4 {
 @media screen and (max-width: 570px) {
     /* FAQ */
     .container-main.page-faq{
-        background-image: url(src/images/figure-rotated.jpg), url(src/images/figure.jpg);
+        background-image: url(../src/images/figure-rotated.jpg), url(../src/images/figure.jpg);
         background-repeat: no-repeat, no-repeat;
         background-size: 100vw, 100vw;
         background-size: cover, cover;
@@ -512,7 +514,7 @@ div.box4 {
     /* End of FAQ */
     /* gallery */
     .page-gallery.container-main{
-        background-image: url(src/images/figure-rotated.jpg);
+        background-image: url(../src/images/figure-rotated.jpg);
         background-position-x: -100px;
         background-position-y: 10px;
         background-repeat: no-repeat;
@@ -528,7 +530,7 @@ div.box4 {
 @media screen and (max-width: 500px) {
     /* FAQ */
     .container-main.page-faq{
-        background-image: url(src/images/figure-rotated.jpg), url(src/images/figure.jpg);
+        background-image: url(../src/images/figure-rotated.jpg), url(../src/images/figure.jpg);
         background-repeat: no-repeat, no-repeat;
         background-size: 100vw, 100vw;
         background-size: cover, cover;

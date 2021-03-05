@@ -1,5 +1,4 @@
 <?php
-    require "config.php";
     require 'session.php';
 
     $error = htmlentities($_GET['error']);
@@ -42,7 +41,7 @@
                     <th>Feature</th>
                     <th>Price</th>
                     <th>Timestamp</th>
-                    <th>Update</th>
+                    <th>More/Update</th>
                     <th>Delete</th>
                 </tr>
                 <?php 
@@ -58,7 +57,7 @@
                     <td><img src="<?php echo '../uploads/'.$row["featurename"]; ?>"/></td>
                     <td><?php echo $row["price"]; ?></td>
                     <td><?php echo $row["timestamp"]; ?></td>
-                    <td><a href="update.php?id=<?php echo $row['id']; ?>">Update</a></td>
+                    <td><a href="update.php?id=<?php echo $row['id']; ?>">More/Update</a></td>
                     <td><a href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
                     <?php if($id == $row['id']){echo "<td>".$error."</td>";} ?>
                     </tr>

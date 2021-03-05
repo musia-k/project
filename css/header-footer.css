@@ -1,0 +1,120 @@
+/* General */
+* {
+    font-family: Ubuntu;
+}
+
+/* header */
+.custom-header {
+    min-width: 320px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.logo {
+    flex: 1;
+}
+#toggle-nav {
+    display: block;
+    color: black;
+    flex: 1;
+    text-align: right;
+    margin-right: 20px;
+}
+#toggle-nav i {
+    font-size: 30px;
+}
+
+/* navbar */
+.custom-navbar {
+    display: none;
+}
+.custom-navbar .link {
+    padding: 0 20px;
+}
+.custom-navbar .link a {
+    color: black;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 21px;
+    text-decoration: none;
+}
+
+/* mobile */
+.custom-navbar.mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    top: 135px;
+    left: 0;
+    right: 0;
+    padding: 12px 0;
+    border: 1px solid #cecece;
+    border-radius: 16px;
+    box-shadow: 6px 6px 7px #cecbcbba;
+    z-index: 10;
+}
+.custom-navbar.mobile .link {
+    width: 80%;
+    padding: 5px;
+    text-align: center;
+}
+.custom-navbar.mobile .link a {
+    display: block;
+    width: 100%;
+    border-radius: 20px;
+    padding: 5px;
+    text-align: center;
+}
+.custom-navbar.mobile .link a:hover {
+    background-color: #5a5b95;
+    color: white;
+}
+.custom-navbar.mobile .active {
+    background-color: #5a5b95;
+    color: white;
+}
+/* end header */
+
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (min-width: 576px) {
+    .custom-navbar {
+        flex: 4;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    #toggle-nav {
+        display: none;
+    }
+    .custom-navbar .link a:hover {
+        border-bottom: 3px solid #5A5B95;
+    }
+    .custom-navbar .active{
+        border-bottom: 3px solid #5A5B95;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+/* @media screen and (min-width: 768px) {
+    
+} */
+
+/* Large devices (desktops, 992px and up) */
+/* @media screen and (min-width: 992px) {
+
+} */
+
+/* X-Large devices (large desktops, 1200px and up) */
+/* @media screen and (min-width: 1200px) {
+
+} */
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+/* @media screen and (min-width: 1400px) {
+
+} */
