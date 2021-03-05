@@ -1,8 +1,8 @@
 <!-- footer -->
-<footer class="custom-footer">
-            <div class="container-sm">
-                <div class="row justify-content-evenly">
-                    <div class="col">
+<div class="custom-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col_1">
                         <div class="text-footer">
                             <h3>Car Rental in Helsinki</h3>
                             <a href="gallery.html">Gallery</a> <br>
@@ -11,36 +11,28 @@
                             <a href="gallery.html">Vehicles</a>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col_2">
                         <div class="text-footer">
                             <h3>Customer Service</h3>
                             <a href="about-us.html">Contact us</a> <br>
                             <a href="faq.html">Frequently Asked Questions</a> 
                         </div>
                     </div>
-                    <div class="col-4 mobile-hidden">
-
+                    <div class="col_3">
                     </div>
-                    <div class="col">
+                    <div class="col_4">
                         <div class="text-footer">
                             <p>© 2021 <br>
-                                RMR Car Rental.
-                                All rights reserved. Please read our Privacy Policy.
+                                RMR Car Rental.<br>
+                                All rights reserved. Please read our Privacy Policy.<br>
                                 Powered by Wheels Car Rental System
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
         <!-- end of footer -->
     </div> <!-- end container-main -->
-    
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-    <script src="js/modules/header-footer.js" type="text/javascript"></script>
   </body>
 </html>
