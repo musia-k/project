@@ -1,6 +1,7 @@
 <?php
     require 'session.php';
     
+    $page = "insert";
     $brand=$type=$category=$price=$picturepath=$featurepath="";
     $target_dir = '../img/goods/';
     $uploadOk = 1;
@@ -22,6 +23,7 @@
         }
         else { 
             // declaring variables for database query
+            $name = htmlentities($_POST['name'], ENT_QUOTES);
             $brand = htmlentities($_POST['brand'], ENT_QUOTES);
             $type = htmlentities($_POST['type'], ENT_QUOTES);
             $category = htmlentities($_POST['category'], ENT_QUOTES);
@@ -32,7 +34,7 @@
             $picturename = basename($_FILES['picture']['name']);
             $featurename = basename($_FILES['feature']['name']);
 
-            $sql = "INSERT INTO cars (`brand`, `type`, `category`, `additional`, `picturename`, `featurename`, `picturepath`, `featurepath`, `price`) VALUES ('$brand', '$type', '$category', '$additional', '$picturename', '$featurename', '$picturepath', '$featurepath', '$price')";
+            $sql = "INSERT INTO goods (`good`, `brand_id`, `type`, `category_id`, `additional`, `photo`, `feature`, `price`) VALUES ('$name', '$brand', '$type', '$category', '$additional', '$picturename', '$featurename', '$price')";
 
             // picture extension validation
             if (in_array($checkPicture, $allowedImageExtension)){
@@ -264,11 +266,10 @@
                                     </td>
                                     <td>
                                         <select name="category">
-                                            <option value="SUV">SUV</option>
-                                            <option value="ECONOM">ECONOM</option>
-                                            <option value="BUSINESS">BUSINESS</option>
-                                            <option value="CONVERTIBLE">CONVERTIBLE</option>
-                                            <option value="OTHER">OTHER</option>
+                                            <option value="1">ECONOM</option>
+                                            <option value="2">SUV</option>
+                                            <option value="3">CONVERTIBLE</option>
+                                            <option value="4">BUSINESS</option>
                                         </select>
                                     </td>
                                 </tr>

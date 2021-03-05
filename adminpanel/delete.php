@@ -1,9 +1,8 @@
 <?php 
-include "config.php";
 include 'session.php';
 $id = htmlentities($_GET['id']);
 
-$sql = "DELETE FROM cars WHERE id='$id'";
+$sql = "DELETE FROM goods WHERE id='$id'";
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     if (isset($_POST['delete'])){

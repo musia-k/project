@@ -1,6 +1,7 @@
 <?php
     require 'session.php';
 
+    $page = "dashboard";
     $error = htmlentities($_GET['error']);
     $id = htmlentities($_GET['id']);
 
