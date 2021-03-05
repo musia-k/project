@@ -22,6 +22,29 @@
             max-height: 100px;
             max-width: 150px;
         }
+        .container.mx-auto {
+            min-width: 938px;
+        }
+        table {
+            margin: auto;
+        }
+
+        /* nav */
+        .navbar {
+            width: 100%;
+            background-color: rgba(90, 91, 149, 0.7);
+        }
+        .navbar a {
+            color: white;
+        }
+        a.nav-link:not(.nav-link.active):hover {
+            color: #9affff;
+            position: relative;
+            bottom: 2px;
+        }
+        .nav-link.active {
+            color: #d9d9d9;
+        }
     </style>
     <title>Dashboard</title>
 </head>
