@@ -59,6 +59,7 @@
         .nav-link.active {
             color: #d9d9d9;
         }
+        /* end nav */
     </style>
     <title>Dashboard</title>
 </head>

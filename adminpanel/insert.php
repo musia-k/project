@@ -2,7 +2,7 @@
     require 'session.php';
 
     $brand=$type=$category=$price=$picturepath=$featurepath="";
-    $target_dir = '../uploads/';
+    $target_dir = '../img/goods/';
     $uploadOk = 1;
     $error = [];
 
@@ -112,6 +112,9 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <style>
+        .container {
+            min-width: 516px;
+        }
         main {
             margin: 15px auto 0 auto;
         }
@@ -134,6 +137,24 @@
         textarea {
             width: 100%;
         }
+
+        /* nav */
+        .navbar {
+            width: 100%;
+            background-color: rgba(90, 91, 149, 0.7);
+        }
+        .navbar a {
+            color: white;
+        }
+        a.nav-link:not(.nav-link.active):hover {
+            color: #9affff;
+            position: relative;
+            bottom: 2px;
+        }
+        .nav-link.active {
+            color: #d9d9d9;
+        }
+        /* end nav */
     </style>
     <title>Insert a New Car</title>
 </head>
