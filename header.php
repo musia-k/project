@@ -1,13 +1,13 @@
 <!-- page styles -->
 <?php
-    // page styles
+    /* // page styles
     $pagestyle = "";
 
     // main container class
     $containerclass = "";
 
     // web title
-    $webtitle = "";
+    $webtitle = ""; */
 
     switch ($page) {
         case 'home':
@@ -15,11 +15,11 @@
             $webtitle = "Home";
             break;
 
-        case 'gallery':
+        /* case 'gallery':
             $pagestyle = "styles/rama.css";
             $webtitle = "Gallery";
             $containerclass = "page-gallery";
-            break;
+            break; */
         
         case 'about-us':
             $pagestyle = "styles/about_us.css";
@@ -53,11 +53,16 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/header-footer.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+
+    <!-- Google font -->
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     
     <!-- Page Styles -->
     <link rel="stylesheet" href="<?php echo $pagestyle; ?>">
-    
 
     <title><?php echo $webtitle; ?></title>
   </head>
@@ -67,27 +72,5 @@
     <div class="container-main <?php echo $containerclass; ?> mx-auto">
     
         <!-- Header -->
-        <header class="custom-header mx-auto">
-            <nav>
-                <div class="row align-items-center mx-auto text-center">
-                    <div class="col">
-                        <a href="home.php" class="text-nav"><img src="src/logo/logo-nav-header.png" alt="rmr" class="header-image" style="margin-left: -2rem;"></a>
-                    </div>
-                    <div class="col">
-                        <a href="home.php" class="text-nav"><?php if ($page == "home"){echo '<span class="active"> HOME </span>';} else {echo "HOME";} ?></a>
-                    </div>
-                    <div class="col">
-                        <a href="gallery.php" class="text-nav"><?php if ($page == "gallery"){echo '<span class="active"> GALLERY </span>';} else {echo "GALLERY";} ?></a>
-                    </div>
-                    <div class="col">
-                        <a href="about-us.php" class="text-nav"><?php if ($page == "about-us"){echo '<span class="active">ABOUT US</span>';} else {echo "ABOUT US";} ?></a>
-                    </div>
-                    <div class="col-3 col-md mobile-nav-margin-left mobile-nav-margin-top">
-                        <a href="faq.php" class="text-nav"><?php if ($page == "faq"){echo '<span class="active">FAQ</span>';} else {echo "FAQ";} ?></a>
-                    </div>
-                    <div class="col-3 col-md mobile-nav-margin-top">
-                        <a href="rules.php" class="text-nav"><?php if ($page == "rules"){echo '<span class="active">RULES</span>';} else {echo "RULES";} ?></a>
-                    </div>
-                </div>
-            </nav>
-        </header> <!-- end of header -->
+        <?php include 'navbar.php'; ?>
+        <!-- end of header -->
