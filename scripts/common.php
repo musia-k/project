@@ -3,7 +3,7 @@
 define('DB_HOST', 'localhost:3307');
 define('DB_USER', 'team3');
 define('DB_PASSWORD', 'EfVL534G');
-define('DB_NAME', 'default_team3');
+define('DB_NAME', 'db');
 
 
 function connectDB() {
