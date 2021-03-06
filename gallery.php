@@ -18,7 +18,7 @@
             <li><a href="catalog.php">Catalogue with filters</a></li>
             <li><a href="catalog-pag.php">Catalogue with pag</a></li>
             <li id="compare-tab"><a href="compare.php">Comparison of goods<span class="badge"></span></a></li>
-            <li><a href="cart.php">Chart<span id="total-cart-count" class="badge"></span></a></li>
+            <li><a href="cart.php">Cart<span id="total-cart-count" class="badge"></span></a></li>
             <li><a href="order.php">Order</a></li>
         </ul>
         <br />
@@ -41,7 +41,7 @@
                         data-id="<%= good.id %>"
                         data-name="<%- good.name %>"
                         data-price="<%= good.price %>"
-                    >Add to chart</button>
+                    >Add to Cart</button>
                 </div>
             </li>
         <% }); %>
