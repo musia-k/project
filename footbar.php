@@ -5,17 +5,17 @@
             <div class="col">
                 <div class="text-footer">
                     <h3>Car Rental in Helsinki</h3>
-                    <a href="gallery.html">Gallery</a> <br>
-                    <a href="gallery.html">Special offers</a> <br>
-                    <a href="gallery.html">Business renters</a> <br>
-                    <a href="gallery.html">Vehicles</a>
+                    <a href="gallery.php">Gallery</a> <br>
+                    <a href="gallery.php">Special offers</a> <br>
+                    <a href="gallery.php">Business renters</a> <br>
+                    <a href="gallery.php">Vehicles</a>
                 </div>
             </div>
             <div class="col">
                 <div class="text-footer">
                     <h3>Customer Service</h3>
-                    <a href="about-us.html">Contact us</a> <br>
-                    <a href="faq.html">Frequently Asked Questions</a> 
+                    <a href="home.php">Contact Us</a> <br>
+                    <a href="faq.php">Frequently Asked Questions</a> 
                 </div>
             </div>
             <div class="col-4 mobile-hidden">
