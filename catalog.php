@@ -116,6 +116,8 @@
         <% }); %>
     </script>
 
+    <?php include 'footbar.php'; ?>
+
     <script src="js/vendor/jquery.min.js" type="text/javascript"></script>
     <script src="js/vendor/jquery.cookie.js" type="text/javascript"></script>
     <script src="components/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>

@@ -51,9 +51,9 @@
     font-size: 12px;
     text-decoration: none;
 }
-.text-footer a:hover {
-    /* border-bottom: 2px solid #ffffff; */
-}
+/* .text-footer a:hover {
+    border-bottom: 2px solid #ffffff;
+} */
 .text-nav {
     color: black;
     font-family: Regular 400;

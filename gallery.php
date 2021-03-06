@@ -25,8 +25,7 @@
         <ul id="goods" class="list-unstyled">
             <img src="img/loading.gif" alt="" />
         </ul>
-    </div>
-
+    
     <script id="catalog-template" type="text/template">
         <% _.each(goods, function(good) { %>
             <li class="good-item row">
@@ -47,6 +46,8 @@
             </li>
         <% }); %>
     </script>
+    </div>
+    <?php include 'footbar.php'; ?>
 
     <script src="js/vendor/jquery.min.js" type="text/javascript"></script>
     <script src="js/vendor/jquery.cookie.js" type="text/javascript"></script>

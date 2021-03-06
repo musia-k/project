@@ -100,6 +100,8 @@
         <% } %>
     </script>
 
+    <?php include 'footbar.php'; ?>
+
     <script src="js/vendor/jquery.min.js" type="text/javascript"></script>
     <script src="js/vendor/jquery.cookie.js" type="text/javascript"></script>
     <script src="js/vendor/underscore.min.js" type="text/javascript"></script>
