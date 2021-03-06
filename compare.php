@@ -58,7 +58,7 @@
         <th>
             <div class="compare-table__good"><%= good.good %></div>
             <img class="compare-table__photo" src="/img/goods/<%= good.photo %>" />
-            <div class="compare-table__price"><%= good.price %> руб.</div>
+            <div class="compare-table__price"><%= good.price %> $.</div>
             <div class="compare-table__remove js-compare-remove" data-id="<%= good.good_id %>">Delete comparison</div>
         </th>
         <% }); %>
