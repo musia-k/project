@@ -122,7 +122,7 @@ var order = (function($) {
     }
 
     function _orderComplete() {
-        ui.$orderBtn.removeAttr('disabled').text('Send the order');
+        ui.$orderBtn.removeAttr('disabled').text('Order was sent');
     }
 
     function _onSubmitForm(e) {
@@ -146,7 +146,7 @@ var order = (function($) {
             data: orderData,
             type: 'POST',
             cache: false,
-            dataType: 'json',
+            dataType: 'js',
             error: _orderError,
             success: function(responce) {
                 if (responce.code === 'success') {
@@ -167,3 +167,5 @@ var order = (function($) {
     }
 
 })(jQuery);
+
+
