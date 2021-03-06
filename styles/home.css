@@ -48,3 +48,26 @@ body{
     }
 
 }
+
+@media screen and (device-width: 1024px) {
+    .col-md-4{
+        padding-left: 70px;
+    }
+   }
+   @media screen and (max-width: 468px) {
+    .col-md-4{
+        display: none;
+    }
+   }
+   @media screen and (max-width: 852px) {
+    .col-md-4{
+        margin-left: 10px;
+        width: fit-content
+    }
+   }
+   @media screen and (max-width: 728px) {
+    .col-md-4{
+        margin-left: 100px;
+        width: fit-content
+    }
+   }
