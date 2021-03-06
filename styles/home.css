@@ -28,6 +28,12 @@ body{
     padding-bottom: 150px;
     transform: rotate(-1deg);
 }
+.col-md-4{
+    margin-left:100px; 
+    margin-top:35px;
+    margin-bottom:35px;
+}
+
 @media screen and (max-width: 860px) {
 
     .col-md-3 img{
