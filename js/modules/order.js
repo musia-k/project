@@ -1,6 +1,6 @@
 'use strict';
 
-// Cart 
+// Cart module
 var order = (function($) {
 
     var ui = {
@@ -24,7 +24,7 @@ var order = (function($) {
         summa: 10000
     };
 
-    // Initialization of 
+    // Initialization 
     function init() {
         _renderMessage();
         _checkCart();
@@ -32,7 +32,7 @@ var order = (function($) {
         _bindHandlers();
     }
 
-    // amount + overall sum
+    // rendering of message 
     function _renderMessage() {
         var template = _.template(ui.$orderMessageTemplate.html()),
             data;
@@ -41,17 +41,17 @@ var order = (function($) {
             count: cart.getCountAll(),
             summa: cart.getSumma()
         };
-        ui.$messagecart.php(template(data));
+        ui.$messageCart.html(template(data));
     }
 
-    // case: empty cart
+    // if cart is empty - not work (button)
     function _checkCart() {
         if (cart.getCountAll() === 0) {
             ui.$orderBtn.attr('disabled', 'disabled');
         }
     }
 
-    // change way of delivering
+    // Change the tyoe of delivery
     function _changeDelivery() {
         var $item = ui.$delivery.btn.filter(':checked'),
             deliveryType = $item.attr('data-type'),
@@ -60,9 +60,9 @@ var order = (function($) {
             fullSumma = deliverySumma + cartSumma,
             alert =
                 freeDelivery.enabled
-                    ? 'We give you a free pick-up!'
+                    ? 'You got a free delivery!'
                     :
-                        'Overall sum of delivery ' + deliverySumma + ' $. ' +
+                        'Sum of delivery:  ' + deliverySumma + ' $. ' +
                         'Overall sum: ' +
                         cartSumma + ' + ' + deliverySumma + ' = ' + fullSumma + ' $';
 
@@ -72,12 +72,10 @@ var order = (function($) {
         ui.$delivery.alert.html(alert);
     }
 
-    // initializing the delivery
+    
     function _initDelivery() {
-        // free pick-up
         freeDelivery.enabled = (cart.getSumma() >= freeDelivery.summa);
 
-        // event - change
         ui.$delivery.btn.on('change', _changeDelivery);
 
         _changeDelivery();
@@ -89,12 +87,12 @@ var order = (function($) {
         ui.$orderForm.on('submit', _onSubmitForm);
     }
 
-    // close alert-а
+    //  alert-а
     function _closeAlert(e) {
         $(e.target).parent().addClass('hidden');
     }
 
-    // validation
+    // Validation of the form
     function _validate() {
         var formData = ui.$orderForm.serializeArray(),
             name = _.find(formData, {name: 'name'}).value,
@@ -103,7 +101,6 @@ var order = (function($) {
         return isValid;
     }
 
-    // prepare cart
     function _getCartData() {
         var cartData = cart.getData();
         _.each(cart.getData(), function(item) {
@@ -112,7 +109,7 @@ var order = (function($) {
         return cartData;
     }
 
-    // success
+    // successful delivery 
     function _orderSuccess(responce) {
         console.info('responce', responce);
         ui.$orderForm[0].reset();
@@ -122,15 +119,12 @@ var order = (function($) {
     // error
     function _orderError(responce) {
         console.error('responce', responce);
-
     }
 
-    // sending is over
     function _orderComplete() {
         ui.$orderBtn.removeAttr('disabled').text('Send the order');
     }
 
-    // order making
     function _onSubmitForm(e) {
         var isValid,
             formData,
@@ -146,7 +140,7 @@ var order = (function($) {
         formData = ui.$orderForm.serialize();
         cartData = _getCartData();
         orderData = formData + '&cart=' + JSON.stringify(cartData);
-        ui.$orderBtn.attr('disabled', 'disabled').text('Delivery is taking place...');
+        ui.$orderBtn.attr('disabled', 'disabled').text('Sendind process..');
         $.ajax({
             url: 'scripts/order.php',
             data: orderData,
@@ -167,7 +161,7 @@ var order = (function($) {
 
 
 
-    // export outter
+    // export out 
     return {
         init: init
     }
