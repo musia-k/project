@@ -123,7 +123,7 @@ try {
 
     addDetails($data, $conn);
 
-    /* sendEmailOrder($data); */
+    sendEmailOrder($data);
     echo json_encode(array(
         'code' => 'success'
     ));
