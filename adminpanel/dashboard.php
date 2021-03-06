@@ -1,10 +1,25 @@
 <?php
     require 'session.php';
 
+    $page = "dashboard";
     $error = htmlentities($_GET['error']);
     $id = htmlentities($_GET['id']);
 
-    $sql = "select * from cars";
+    $sql = "
+        SELECT
+            g.id AS id,
+            g.good AS brand,
+            c.category AS category,
+            g.price AS price,
+            g.timestamp AS timestamp,
+            g.photo AS picturename,
+            g.feature AS featurename
+        FROM
+            goods AS g
+        INNER JOIN categories AS c
+        ON
+            g.category_id = c.id
+    ";
     $result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
@@ -22,6 +37,30 @@
             max-height: 100px;
             max-width: 150px;
         }
+        .container.mx-auto {
+            min-width: 938px;
+        }
+        table {
+            margin: auto;
+        }
+
+        /* nav */
+        .navbar {
+            width: 100%;
+            background-color: rgba(90, 91, 149, 0.7);
+        }
+        .navbar a {
+            color: white;
+        }
+        a.nav-link:not(.nav-link.active):hover {
+            color: #9affff;
+            position: relative;
+            bottom: 2px;
+        }
+        .nav-link.active {
+            color: #d9d9d9;
+        }
+        /* end nav */
     </style>
     <title>Dashboard</title>
 </head>
@@ -35,7 +74,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Brand</th>
-                    <th>Type</th>
+                    <!-- <th>Type</th> -->
                     <th>Category</th>
                     <th>Picture</th>
                     <th>Feature</th>
@@ -51,10 +90,10 @@
                     <tr>
                     <td><?php echo $row["id"]; ?></td>
                     <td><?php echo $row["brand"]; ?></td>
-                    <td><?php echo $row["type"]; ?></td>
+                    <!-- <td><?php /* echo $row["type"]; */ ?></td> -->
                     <td><?php echo $row["category"]; ?></td>
-                    <td><img src="<?php echo '../uploads/'.$row["picturename"]; ?>"/></td>
-                    <td><img src="<?php echo '../uploads/'.$row["featurename"]; ?>"/></td>
+                    <td><img src="<?php echo '../img/goods/'.$row["picturename"]; ?>"/></td>
+                    <td><img src="<?php echo '../img/goods/'.$row["featurename"]; ?>"/></td>
                     <td><?php echo $row["price"]; ?></td>
                     <td><?php echo $row["timestamp"]; ?></td>
                     <td><a href="update.php?id=<?php echo $row['id']; ?>">More/Update</a></td>

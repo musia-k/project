@@ -1,16 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<nav class="navbar navbar-expand mx-auto">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Admin Panel</a>
+        <div class="collapse navbar-collapse">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="dashboard.php">Dashboard</a>
-                <a class="nav-link" href="insert.php">Insert a new car</a>
-                <a class="nav-link" href="logout.php">Logout</a>
-                <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
-            </div>
+                <a class="nav-link <?php if ($page == "dashboard") { echo "active"; } ?>" aria-current="page" href="dashboard.php">Dashboard</a>
+                <a class="nav-link <?php if ($page == "insert") { echo "active"; } ?>" href="insert.php">Insert a new car</a>
             </div>
         </div>
-        </nav>
+        <div class="logout">
+            <a class="nav-link" href="logout.php">Logout</a>
+        </div>
+    </div>
+</nav>

@@ -80,7 +80,7 @@
                     data-id="<%= item.good_id %>"
                     data-name="<%- item.good %>"
                     data-price="<%= item.price %>"
-                >Add to chart</button>
+                >Add to Cart</button>
                 <button
                     class="btn btn-link btn-sm js-add-to-compare"
                     data-id="<%= item.good_id %>"
@@ -106,7 +106,7 @@
                     data-id="<%= item.good_id %>"
                     data-name="<%- item.good %>"
                     data-price="<%= item.price %>"
-                >Add to chart</button>
+                >Add to Cart</button>
             </div>
         </li>
         <% }); %>
@@ -125,7 +125,7 @@
                         data-id="<%= item.good_id %>"
                         data-name="<%- item.good %>"
                         data-price="<%= item.price %>"
-                    >Add to chart</a>
+                    >Add to Cart</a>
                 </p>
             </div>
         </li>
@@ -147,6 +147,8 @@
         <li data-page="<%= countPages %>"><a href>&raquo;</a></li>
         <% } %>
     </script>
+
+    <?php include 'footbar.php'; ?>
 
     <script src="js/vendor/jquery.min.js" type="text/javascript"></script>
     <script src="js/vendor/jquery.cookie.js" type="text/javascript"></script>

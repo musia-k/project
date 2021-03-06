@@ -99,7 +99,7 @@
                     data-id="<%= item.good_id %>"
                     data-name="<%- item.good %>"
                     data-price="<%= item.price %>"
-                >Add to chart</button>
+                >Add to Cart</button>
                 <button
                     class="btn btn-link btn-sm js-add-to-compare"
                     data-id="<%= item.good_id %>"
@@ -115,6 +115,8 @@
         <div class="checkbox"><label><input type="checkbox" name="brands[]" value="<%= item.id %>"> <%= item.brand %></label></div>
         <% }); %>
     </script>
+
+    <?php include 'footbar.php'; ?>
 
     <script src="js/vendor/jquery.min.js" type="text/javascript"></script>
     <script src="js/vendor/jquery.cookie.js" type="text/javascript"></script>

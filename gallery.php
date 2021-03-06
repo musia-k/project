@@ -18,15 +18,14 @@
             <li><a href="catalog.php">Catalogue with filters</a></li>
             <li><a href="catalog-pag.php">Catalogue with pag</a></li>
             <li id="compare-tab"><a href="compare.php">Comparison of goods<span class="badge"></span></a></li>
-            <li><a href="cart.php">Chart<span id="total-cart-count" class="badge"></span></a></li>
+            <li><a href="cart.php">Cart<span id="total-cart-count" class="badge"></span></a></li>
             <li><a href="order.php">Order</a></li>
         </ul>
         <br />
         <ul id="goods" class="list-unstyled">
             <img src="img/loading.gif" alt="" />
         </ul>
-    </div>
-
+    
     <script id="catalog-template" type="text/template">
         <% _.each(goods, function(good) { %>
             <li class="good-item row">
@@ -42,11 +41,13 @@
                         data-id="<%= good.id %>"
                         data-name="<%- good.name %>"
                         data-price="<%= good.price %>"
-                    >Add to chart</button>
+                    >Add to Cart</button>
                 </div>
             </li>
         <% }); %>
     </script>
+    </div>
+    <?php include 'footbar.php'; ?>
 
     <script src="js/vendor/jquery.min.js" type="text/javascript"></script>
     <script src="js/vendor/jquery.cookie.js" type="text/javascript"></script>
