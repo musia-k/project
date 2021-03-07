@@ -36,7 +36,7 @@ var compare = (function($) {
 
         // Check the matching categories
         if (comparedCategoryId && categoryId !== comparedCategoryId) {
-            alert('Не допускается сравнивать товары разных категорий');
+            alert('You cannot add the cars of different categories');
             return false;
         }
 
@@ -47,9 +47,9 @@ var compare = (function($) {
             $.cookie(settings.cookie.goods, comparedGoodsArr.join(','), {expires: 365, path: '/'});
             $.cookie(settings.cookie.category, categoryId, {expires: 365, path: '/'});
             updateCompareTab();
-            alert('Товар добавлен к сравнению!');
+            alert('Car is added to comparison!');
         } else {
-            alert('Этот товар уже есть в списке сравниваемых');
+            alert('This car is already in comparison');
         }
     }
 
