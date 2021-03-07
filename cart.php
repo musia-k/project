@@ -69,7 +69,7 @@
                         <span class="glyphicon glyphicon-plus"></span>
                     </span>
                 </td>
-                <td><span class="js-summa"><%= good.count * good.price %></span> руб.</td>
+                <td><span class="js-summa"><%= good.count * good.price %></span> $.</td>
                 <td>
                     <span class="cart-item__btn-remove js-remove-from-cart" title="Delete from cart" data-id="<%= good.id %>">
                         <span class="glyphicon glyphicon-remove"></span>                                
