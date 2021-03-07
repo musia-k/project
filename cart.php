@@ -29,7 +29,7 @@
                         <th>Articule</th>
                         <th>Name</th>
                         <th>Price</th>
-                        <th>Amount of</th>
+                        <th>Amount of days of hiring</th>
                         <th>Sum</th>
                         <th></th>
                     </tr>
