@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 18, 2021 at 05:49 PM
+-- Generation Time: Mar 07, 2021 at 06:33 PM
 -- Server version: 8.0.22
 -- PHP Version: 7.4.13
 
@@ -20,6 +20,37 @@ SET time_zone = "+00:00";
 --
 -- Database: `default_team3`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `brands`
+--
+
+CREATE TABLE `brands` (
+  `id` int UNSIGNED NOT NULL,
+  `brand` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB AVG_ROW_LENGTH=2730 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `brands`
+--
+
+INSERT INTO `brands` (`id`, `brand`) VALUES
+(1, 'Skoda'),
+(2, 'Hyundai'),
+(3, 'Suzuki'),
+(4, 'Citroen'),
+(5, 'Toyota'),
+(6, 'Kia'),
+(7, 'Audi'),
+(8, 'Ford'),
+(9, 'Volkswagen'),
+(10, 'Mitsubishi'),
+(11, 'Chery'),
+(12, 'Nissan'),
+(13, 'Mini'),
+(14, 'Honda');
 
 -- --------------------------------------------------------
 
@@ -125,6 +156,170 @@ INSERT INTO `car_reviews` (`id`, `review`, `car_id`, `timestamp`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `id` int UNSIGNED NOT NULL,
+  `category` varchar(255) NOT NULL
+) ENGINE=InnoDB AVG_ROW_LENGTH=5461 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `category`) VALUES
+(1, 'Econom'),
+(2, 'SUV'),
+(3, 'Convertible'),
+(4, 'Business');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clients`
+--
+
+CREATE TABLE `clients` (
+  `id` int UNSIGNED NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `phone` varchar(50) DEFAULT NULL,
+  `dt_added` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB AVG_ROW_LENGTH=2730 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `clients`
+--
+
+INSERT INTO `clients` (`id`, `name`, `email`, `phone`, `dt_added`) VALUES
+(0, 'tor', 'akun.kripitit@gmail.com', '123456', '2021-03-06 12:38:02'),
+(0, 'asdasasda', 'akun.kripitit@gmail.com', '12345678', '2021-03-06 12:39:11'),
+(0, 'asdasasda', 'akun.kripitit@gmail.com', '12345678', '2021-03-06 12:39:19'),
+(0, 'tor', 'akun.kripitit@gmail.com', '12345678', '2021-03-06 13:04:01'),
+(0, 'tor', 'akun.kripitit@gmail.com', '12345678', '2021-03-06 13:11:48'),
+(0, 'ttoot', 'akun.kripitit@gmail.com', '12345678', '2021-03-06 13:19:42'),
+(0, 'test', 'akun.kripitit@gmail.com', '12345678', '2021-03-07 06:38:10'),
+(0, 'Maryna Kyselova', 'krasmed17@gmail.com', '+380968738721', '2021-03-07 06:46:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `details`
+--
+
+CREATE TABLE `details` (
+  `order_id` int NOT NULL,
+  `good_id` int NOT NULL,
+  `good` varchar(255) NOT NULL,
+  `price` int NOT NULL,
+  `count` int NOT NULL
+) ENGINE=InnoDB AVG_ROW_LENGTH=3276 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `details`
+--
+
+INSERT INTO `details` (`order_id`, `good_id`, `good`, `price`, `count`) VALUES
+(7, 1, 'Skoda Fabia', 18, 1),
+(8, 1, 'Skoda%20Fabia', 18, 1),
+(9, 1, 'Skoda Fabia', 18, 1),
+(0, 1, 'Skoda Fabia', 18, 1),
+(0, 2, 'Hyundai Accent', 22, 1),
+(0, 2, 'Hyundai%20Accent', 22, 1),
+(4, 2, 'Hyundai Accent', 22, 1),
+(5, 1, 'Skoda Fabia', 18, 1),
+(6, 1, 'Skoda Fabia', 18, 1),
+(7, 2, 'Hyundai Accent', 22, 1),
+(8, 2, 'Hyundai Accent', 22, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `goods`
+--
+
+CREATE TABLE `goods` (
+  `id` int UNSIGNED NOT NULL,
+  `good` varchar(255) NOT NULL,
+  `category_id` int UNSIGNED NOT NULL,
+  `brand_id` int UNSIGNED NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `price` int UNSIGNED NOT NULL,
+  `rating` int UNSIGNED NOT NULL DEFAULT '0',
+  `photo` varchar(255) NOT NULL,
+  `feature` varchar(255) NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `additional` text
+) ENGINE=InnoDB AVG_ROW_LENGTH=1170 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `goods`
+--
+
+INSERT INTO `goods` (`id`, `good`, `category_id`, `brand_id`, `type`, `price`, `rating`, `photo`, `feature`, `timestamp`, `additional`) VALUES
+(1, 'Skoda Fabia', 1, 1, '', 18, 0, 'skoda-fabia.jpg', 'Picture1.png', '2021-03-05 11:57:50', NULL),
+(2, 'Hyundai Accent', 1, 2, '', 22, 0, 'hyundai-accent.jpg', 'Picture2.png', '2021-03-05 11:57:50', NULL),
+(3, 'Suzuki Vitara', 2, 3, '', 18, 0, 'grand-vitara.jpg', 'Picture3.png', '2021-03-05 11:57:50', NULL),
+(4, 'Citroen C-Elysee', 1, 4, '', 24, 0, 'citroen-elyssee.jpg', 'Picture4.png', '2021-03-05 11:57:50', NULL),
+(5, 'Hyundai Elantra 2019', 1, 2, '', 24, 0, '2019-hyundai-elantra.jpg', 'Picture5.png', '2021-03-05 11:57:50', NULL),
+(6, 'Toyota RAV 4', 2, 5, '', 57, 0, 'Toyota RAV 4.jpg', 'Picture6.png', '2021-03-05 11:57:50', NULL),
+(7, 'Kia Sportage', 2, 6, '', 89, 0, '2016-kia-sportage.jpeg', 'Picture7.png', '2021-03-05 11:57:50', NULL),
+(8, 'Audi TT Cabrio', 3, 7, '', 90, 0, 'Audi TT Cabrio.jpg', 'Picture8.png', '2021-03-05 11:57:50', NULL),
+(9, 'Hyundai Solaris', 1, 2, '', 27, 0, 'hyundai_solaris_1.jpg', 'Picture9.png', '2021-03-05 11:57:50', NULL),
+(10, 'Ford Fiesta Sedan', 1, 8, '', 27, 0, 'Ford Fiesta Sedan.jpg', 'Picture10.png', '2021-03-05 11:57:50', NULL),
+(11, 'Volkswagen Polo', 1, 9, '', 29, 0, 'Volkswagen Polo.jpg', 'Picture11.png', '2021-03-05 11:57:50', NULL),
+(12, 'Toyota Corolla E17', 1, 5, '', 35, 0, 'toyota corolla 2019.jpg', 'Picture12.png', '2021-03-05 11:57:50', NULL),
+(13, 'Hyundai Tucson', 1, 2, '', 57, 0, 'Hyundai Tucson.jpg', 'Picture13.png', '2021-03-05 11:57:50', NULL),
+(14, 'Mitsubishi Outlander', 2, 10, '', 57, 0, 'Mitsubishi Outlander.jpg', 'Picture14.png', '2021-03-05 11:57:50', NULL),
+(15, 'Toyota Camry 70', 4, 5, '', 60, 0, 'Toyota Camry 70.jpg', 'Picture15.png', '2021-03-05 11:57:50', NULL),
+(16, 'Chery Tiggo 2', 2, 11, '', 31, 0, 'Chery Tiggo 2.jpg', 'Picture16.png', '2021-03-05 11:57:50', NULL),
+(17, 'Nissan Rogue', 2, 12, '', 31, 0, 'Nissan Rogue.jpg', 'Picture17.png', '2021-03-05 11:57:50', NULL),
+(18, 'Mini Countryman', 2, 13, '', 57, 0, 'Mini Countryman.jpg', 'Picture18.png', '2021-03-05 11:57:50', NULL),
+(19, 'Honda CRV', 2, 14, '', 57, 0, 'Honda CRV.jpg', 'Picture19.png', '2021-03-05 11:57:50', NULL),
+(20, 'Volkswagen Passat 8', 4, 9, '1.8 / Gasoline / Auto', 60, 0, 'Volkswagen Passat 8.jpg', 'Picture20.png', '2021-03-05 16:06:52', 'Volkswagen Passat (Volkswagen Passat) is a class &quot;D&quot; sedan. The world premiere of the eighth generation of the model took place at the Paris Motor Show in October 2014.\r\nVolkswagen designers are often scolded for their too conservative approach to the appearance of cars, but there is another category, which believes that there is nothing better than a calm &quot;long-playing&quot; design. Be that as it may, the Passat B8 easily gives away its affiliation with both the brand and the model, but at the same time it has changed completely. In fact, it carries none of the body details borrowed from the previous generation of the sedan.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `goods_props`
+--
+
+CREATE TABLE `goods_props` (
+  `id` int UNSIGNED NOT NULL,
+  `good_id` int UNSIGNED NOT NULL,
+  `prop` varchar(255) NOT NULL,
+  `value` varchar(255) NOT NULL
+) ENGINE=InnoDB AVG_ROW_LENGTH=1170 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `goods_props`
+--
+
+INSERT INTO `goods_props` (`id`, `good_id`, `prop`, `value`) VALUES
+(1, 1, ' ', '1.4 / Gasoline / Mechanic'),
+(2, 2, ' ', '1.4 / Gasoline / Auto'),
+(3, 3, ' ', '1.4 / Gasoline / Auto'),
+(4, 4, ' ', '1.6 / Gasoline / Auto'),
+(5, 5, ' ', '1.6 / Gasoline / Auto');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int UNSIGNED NOT NULL,
+  `client_id` int UNSIGNED NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `message` varchar(255) DEFAULT NULL,
+  `dt_added` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB AVG_ROW_LENGTH=2730 DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `webadmin`
 --
 
@@ -161,6 +356,18 @@ ALTER TABLE `car_reviews`
   ADD KEY `fk_car_id` (`car_id`);
 
 --
+-- Indexes for table `goods`
+--
+ALTER TABLE `goods`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `webadmin`
 --
 ALTER TABLE `webadmin`
@@ -181,6 +388,18 @@ ALTER TABLE `cars`
 --
 ALTER TABLE `car_reviews`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT for table `goods`
+--
+ALTER TABLE `goods`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `webadmin`
