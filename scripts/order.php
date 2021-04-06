@@ -1,10 +1,10 @@
 <?php
 
 // needed constants
-define('DB_HOST', 'localhost: 3307');
-define('DB_USER', 'root');
-define('DB_PASSWORD', 'root');
-define('DB_NAME', 'db');
+define('DB_HOST', 'localhost:3307');
+define('DB_USER', 'team3');
+define('DB_PASSWORD', 'EfVL534G');
+define('DB_NAME', 'default_team3');
 
 define('EMAIL_ADMIN', 'reservations@rmr_cars.com');
 define('EMAIL_FROM_NAME', 'RMR Renting company');
